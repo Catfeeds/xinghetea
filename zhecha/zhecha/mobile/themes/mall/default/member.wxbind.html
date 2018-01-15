@@ -1,0 +1,20 @@
+{include file=header.html}
+<div id="main" class="pb20">
+	<div id="page-login" class="page-auth">
+		<form class="J_AjaxForm" method="POST">
+			<dl class="form pb20">
+				<dd>
+					<input type="text" id="user_name" name="user_name" class="J_AjaxFormFields input" placeholder=" {$lang.input_user_name}" />
+				</dd>
+				<dd>
+					<input type="password" name="password" id="password" class="J_AjaxFormFields input" placeholder=" {$lang.input_password}" />
+				</dd>
+				<dd>
+					<input type="hidden" class="J_AjaxFormSuccessRet J_AjaxFormFields" name="ret_url" value="{$ret_url}" />
+					<input type="submit" class="J_AjaxFormSubmit btn-alipay" value="{$lang.user_bind}" />
+				</dd>
+			</dl>
+		</form>
+	</div>
+</div>
+{include file=footer.html}

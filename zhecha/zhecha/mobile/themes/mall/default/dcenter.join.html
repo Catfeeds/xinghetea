@@ -1,0 +1,54 @@
+{include file=dcenter.header.html}
+<div class="dcenter">
+  <div class="jointo">
+    <div class="banner"> <img  src="{res file=images/member/banner_bg.jpg}"></div>
+    <div class="join-form" >
+      <p class="notice" style="padding-bottom:0;">欢迎加入<span class="red">{$store.store_name|escape}</span>，请填写申请信息！</p>
+      <p class="notice" style="padding: 0 10px;">邀请人： <span class="red">{$store.parent_name|escape}</span> (请核对) </p>
+      <!--{if $store.enable_distribution}-->
+      <p class="notice" style="padding: 0 10px; background-color:#fece00;">
+          一级分销佣金： <span class="red">{$store.distribution_1}%</span> <br />
+          二级分销佣金： <span class="red">{$store.distribution_2}%</span> <br />
+          三级分销佣金： <span class="red">{$store.distribution_3}%</span>
+      </p>
+      <!--{else}-->
+      <p class="notice" style="padding: 0 10px;"><span class="red">{$store.store_name|escape}未开启分销功能，用户购买将不计佣金。</span></p>
+      <!--{/if}-->
+      <form class="J_AjaxForm" method="POST">
+        <dl class="form pb20">
+          <dd>
+            <input type="text" id="real_name" name="real_name" class="J_AjaxFormFields input" placeholder="{$lang.input_user_name}" />
+          </dd>
+          <dd>
+            <input type="text" name="phone_mob" id="phone_mob" class="J_AjaxFormFields input" placeholder=" {$lang.input_phone}" />
+          </dd>
+          <dd>
+            <input type="hidden" class="J_AjaxFormSuccessRet J_AjaxFormFields" name="ret_url" value="{url app=dcenter}" />
+            <input type="submit" class="J_AjaxFormSubmit btn-alipay" value="申请成为分销商" />
+          </dd>
+        </dl>
+      </form>
+    </div>
+    <div class="join-desc">
+      <div class="hd">分销商特权</div>
+      <div class="bd">
+        <div class="item"> <i class="psmb-icon-font" style="color:#33cd32;">&#xe73b;</i>
+          <div class="info">
+            <p class="fs14 mb5">独立微店</p>
+            <p class="fs12 gray">拥有自己的微店及推广二维码；</p>
+          </div>
+        </div>
+        <div class="item"> <i class="psmb-icon-font" style="color:#fece00;">&#xe6e0;</i>
+          <div class="info">
+            <p class="fs14 mb5">销售拿佣金</p>
+            <p class="fs12 gray">微店卖出商品，您可以获得佣金；</p>
+          </div>
+        </div>
+        <div class="item">
+          <p class="fs12 gray" style="line-height:18px;">分销商的商品销售统一由厂家直接收款、直接发货，并提供产品的售后服务，分销佣金由厂家统一设置。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{include file=footer.html}

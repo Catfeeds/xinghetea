@@ -1,0 +1,61 @@
+{include file=header.html} 
+<script type="text/javascript">
+$(function(){
+	$('#send_phonecode').click(function(){
+		var phone_mob = $.trim($("input[name='phone_mob']").val());
+		if(phone_mob=='' || !is_mobile(phone_mob)){
+			layer.open({content: "{$lang.phone_mob_invalid}", className:'layer-popup', time: 3});
+			return;
+		}
+		send_phonecode($(this), {from: "register", phone_mob: phone_mob}, 120);
+	});
+});
+</script>
+<div id="main">
+	<div id="page-register" class="page-auth page-body">
+		<form class="J_AjaxForm" method="post">
+			<dl class="form pb20">
+				<dd>
+					<input type="text" id="user_name" name="user_name" class="J_AjaxFormFields input" placeholder=" {$lang.user_name_limit}"/>
+				</dd>
+				<dd>
+					<input type="password" id="password" name="password" class="J_AjaxFormFields input" placeholder=" {$lang.password_length_limit}"/>
+				</dd>
+				<dd>
+					<input type="password" name="password_confirm" id="password_confirm" class="J_AjaxFormFields input" placeholder=" {$lang.input_comfirm_password}"/>
+				</dd>
+				<dd>
+					<input type="text" name="email" id="email" class="J_AjaxFormFields input" placeholder=" {$lang.email_invalid}"/>
+				</dd>
+				<dd>
+					<input type="text" name="phone_mob" id="phone_mob" class="J_AjaxFormFields input" placeholder=" {$lang.phone_mob_invalid}"/>
+				</dd>
+				
+				<!--{if $phone_captcha}-->
+				<dd class="captchaCode clearfix">
+					<input type="text" name="check_code" class="J_AjaxFormFields float-left input" placeholder=" {$lang.phone_captcha}" />
+					<input id="send_phonecode" type="button" class="btn-captcha float-left"  value="{$lang.get_captcha}" />
+				</dd>
+				<!--{/if}-->
+				
+				<!--{if $captcha}-->
+				<dd class="captcha clearfix">
+					<input type="text" name="captcha" class="J_AjaxFormFields input float-left" id="captcha1" placeholder=" {$lang.input_captcha}" />
+					<img id="captcha" class="float-left" src="{$real_site_url}/index.php?app=captcha&amp;{$random_number}" onclick="javascript:change_captcha($('#captcha'));" /><br />
+				</dd>
+				<!--{/if}-->
+				
+				<dd class="block mb10 clearfix read-licence">
+					<input id="clause" type="checkbox"  name="agree" value="1" checked="checked" class="J_AjaxFormFields"  />
+					<label for="clause" class="labelNone" style="color:#333;" > {$lang.i_have_read} <a href="{url app=article&act=system&code=eula}" >{$lang.mall_eula}</a> </label>
+				</dd>
+				<dd>
+					<input type="hidden" class="J_AjaxFormSuccessRet J_AjaxFormFields" name="ret_url" value="{$ret_url}"  />
+					<input type="submit" class="J_AjaxFormSubmit btn-alipay"  value="{$lang.register}" />
+					<p class="mt20"><a href="{url app=member&act=login}">{$lang.already_have_account}</a></p>
+				</dd>
+			</dl>
+		</form>
+	</div>
+</div>
+{include file=footer.html} 

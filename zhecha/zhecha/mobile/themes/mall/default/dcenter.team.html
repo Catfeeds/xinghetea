@@ -1,0 +1,35 @@
+{include file=dcenter.header.html}
+<div id="page-member">
+  <div class="main dcenter">
+      <div class="header">
+        <div class="mark-text">我的收益（元） <a class="more-link" style="margin: 0" href="{url app=dcenter&act=profit}">查看明细</a></div>
+        <div class="amount-box clearfix"> <span class="amount">{$statistics.amount|default:0}</span> <a href="mobile/index.php?app=deposit&amp;act=withdraw">提现</a></div>
+      </div>
+      <div class="team"> 
+        <!--{if $teams}-->
+        <div class="hd">
+          <h3 class="fs14">团队成员（<span class="red">{$teamscount}</span>）</h3>
+        </div>
+        <!--{foreach from=$teams item=team name=fe_team}-->
+        <div class="bd">
+          <div class="item"> <img src="{$team.portrait}">
+            <div class="info clearfix">
+              <p class="mb5 clearfix"><span class="float-left">{$team.real_name|escape}</span><span class="float-right fs14" style="margin-right: 10px;">{$team.phone_mob}</span></p>
+              <p class="gray fs12">{$team.add_time|date:complete}</p>
+            </div>
+            <div class="earning">
+              <p class="gray fs14"><span class="red">{$team.childcount|default:0}</span> 个成员</p>
+            </div>
+          </div>
+        </div>
+        <!--{/foreach}-->
+        <div class="pageinfo pt10">{include file=page.bottom.html}</div>
+        <!--{else}-->
+        <div class="list-empty"> <i class="psmb-icon-font">&#xe6e5;</i>
+          <p>您还没有分销团队，加油发展吧！</p>
+        </div>
+        <!--{/if}--> 
+      </div>
+  </div>
+</div>
+{include file=footer.html}

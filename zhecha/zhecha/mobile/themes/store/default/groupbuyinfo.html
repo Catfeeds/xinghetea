@@ -1,0 +1,213 @@
+<script type="text/javascript">
+$(function(){
+	/* 抢购倒计时 */
+	$.each($('.timeCountDown'),function(){
+		var theDaysBox  = $(this).find('.NumDays');
+		var theHoursBox = $(this).find('.NumHours');
+		var theMinsBox  = $(this).find('.NumMins');
+		var theSecsBox  = $(this).find('.NumSeconds');
+			
+		countdown(theDaysBox, theHoursBox, theMinsBox, theSecsBox)
+	});
+
+	 if($('#slides').children('div').length>1){
+      	$('#slides').slidesjs({
+        	width: 300,
+        	height: 300,
+			navigation: false,
+			play: {
+          		auto: false
+        	}
+      	});
+	 }
+	 
+	
+	<!--{if $group.ican.login}-->
+	var login = false;
+	<!--{else}-->
+	var login = true;
+	<!--{/if}-->
+		 
+	<!--{if $group.ican.join}--> 
+	var canJoin = true;
+	<!--{else}-->
+	var canJoin = false;
+	<!--{/if}-->
+
+	$('.J_join-btn').click(function(){
+		if(login == true){
+		 	if(canJoin == true){
+		 		popLayer();
+			}else{
+				layer.open({content:'不可以购买自己的商品', time :2});
+			}
+			
+		}else{
+			layer.open({content:'请先登录再执行操作', time: 2});
+		}
+	})
+});
+	function popLayer()
+	{
+		$('body').append("<div style='background:rgba(0,0,0,0.6);position:fixed;' onclick='closePop();' class='masker masker-color-1'></div>");
+		$('.masker').show();
+		$('.pop-select-spec').slideDown();
+	}
+	
+	function closePop()
+	{
+		$('.masker').remove();
+		$('.pop-select-spec').slideUp();
+	}
+</script>
+
+<div class="goods-detail">
+	<div class="col-img relative">
+		<div class="scroll-wrapper">
+			<div id="slides" class="scroller" >
+            	<!--{if $goods._images}-->
+				<!--{foreach from=$goods._images item=goods_image name=fe_goods_image}-->
+				<div><img src="{$site_url}/{$goods_image.thumbnail|default:$default_image}" /></div>
+				<!--{/foreach}-->
+                <!--{else}-->
+                <div><img src="{$site_url}/{$goods.default_image|default:$default_image}" /></div>
+                <!--{/if}--> 
+			</div>
+			<ul class="new-banner-num new-tbl-type" id="idNum">
+			</ul>
+		</div>
+	</div>
+    <div class="J_IsPro is-pro">
+    	<div class="wraper">
+            <div class="lp flex1 webkit-box">
+                <div class="pro-price" ectype="goods_pro_price">
+                   <i>&yen;</i><span>{$group.group_price}</span>
+                </div>
+                <div class="extra-info">
+                	<em><del ectype="goods_price">{$goods.price|price}</del></em>
+                    <span><ins>{$goods.sales|default:0}</ins>件已售</span>
+                </div>
+            </div>
+            <div class="rp">
+            	<!--{if $group.left_time}-->
+                <p class="t">距结束仅剩</p>
+                <p class="J_CountDown timeCountDown clearfix"><span class="tm NumDays">{$group.left_time.d}</span><em>:</em> <span class="tm NumHours">{$group.left_time.h}</span><em>:</em><span class="tm NumMins">{$group.left_time.m}</span><em>:</em><span class="tm NumSeconds">{$group.left_time.s}</span></p>
+                <!--{else}-->
+                <p style="line-height:36px;color:#E61414;">{$group.state_desc}</p>
+                <!--{/if}-->
+            </div>
+        </div>
+    </div>
+    <div class="col-title">
+		<div class="title"> <span>{$group.group_name|escape}</span> <font class="gray"><!--{foreach from=$goods.tags item=tag}-->{$tag}&nbsp;&nbsp;&nbsp;<!--{/foreach}--></font> </div>
+        <!--{if $group.group_desc}-->
+        <div class="group-desc fs12 pl10 pr10" style="color: #B96D2C;margin-top:-10px;">{$group.group_desc|escape}</div>
+        <!--{/if}-->
+	</div>
+	<div class="col-price clearfix">
+        <p class="padding10 extra clearfix col-title"><!-- {if $group.max_per_user gt 0} --><span>{$lang.max_per_user}{$lang.colon}{$group.max_per_user}</span><!--{/if}--><span style="float:right; text-align:right;">{if $group.min_quantity gt $group.quantity}{$lang.short_of}{$group.left_quantity}件成团{else} 已完成{/if}</span></p>
+	</div>
+	<div class="line-background"></div>
+	<div class="store-info">
+		<div class="info margin10">
+			<div class="store-logo"><a href="{url app=store&id=$store.store_id}"><img width="60" height="60" src="{$store.store_logo}" /></a></div>
+			<div class="store-m-info">
+				<p class="store-name"><a href="{url app=store&id=$store.store_id}">{$store.store_name|escpae}</a></p>
+				<p class="extra"><span>好评率</span> <b>{$store.praise_rate}%</b> <span>信誉</span><span> <!--{if $store.credit_value ge 0}--><img src="{$store.credit_image}" alt="" /><!--{/if}--></span></p>
+				<p class="store-map"><a class="gray fs12 icon-position" href="{url app=store&act=map&id=$store.store_id}"><span>店铺地图</span></a></p>
+			</div>
+		</div>
+		<div class="btns clearfix pb10 pl10 pr10">
+			<p> <a href="{url app=store&act=search&id=$store.store_id}"><span><ins>&#xe700;</ins>全部商品</span></a> </p>
+			<p> <a style="margin-left:5px;margin-right:0px;" href="{url app=store&id=$store.store_id}"><span><ins>&#xe676;</ins>进入店铺</span></a> </p>
+		</div>
+	</div>
+	<div class="line-background"></div>
+</div>
+<div class="btn-fixed clearfix">
+	<div class="small-ico clearfix">
+        <div class="ico-it">
+            <a  {if $store.im_qq}href="http://wpa.qq.com/msgrd?v=3&uin={$store.im_qq|escape}&site=qq&menu=yes"{/if} class="btn-to-cart yahei">
+            	<em {if $store.im_qq}style="color:#4A90E2;"{/if}>&#xe6ff;</em><br />客服
+            </a>
+        </div>
+        <div class="ico-it">
+            <a  href="{url app=store&id=$store.store_id}" class="btn-to-cart yahei">
+            	<em>&#xe676;</em><br />进店
+            </a>
+        </div>
+        <div class="ico-it">
+            <a  href="javascript:;" class="J_AjaxRequest btn-to-cart yahei {if $goods.collects}collected{/if}" action="{url app=my_favorite&act=add&type=goods&item_id=$goods.goods_id&ajax=1}">
+            	<em>&#xe669;</em><br />收藏
+            </a>
+        </div>
+    </div>
+    <div class="large-btn clearfix">
+        <div class="btn-it it1"><a {if $group.ican.buy}href="index.php?app=order&goods=groupbuy&group_id={$smarty.get.id}"{else}href="javascript:;" style="background:#e2e2e2;"{/if}  class="btn-buy yahei">立即购买</a></div>
+        <!-- {if $group.ican.join} -->
+        <div class="btn-it it2"><a href="javascript:;" class="btn-cart J_join-btn  yahei">参加团购</a></div>
+        <!--{else}-->
+        <!-- {if $group.ican.exit} -->
+        <div class="btn-it it2"><a  href="javascript:;" onClick="$('.exit').trigger('click');" class="btn-cart J_exit-btn yahei">退出团购</a></div>
+        <!--{else}-->
+        <div class="btn-it it2"><a href="javascript:;" class="btn-cart J_join-btn  yahei">参加团购</a></div>
+        <!-- {/if} -->
+        <!-- {/if} -->
+    </div>
+</div>
+<a name="module"></a>
+<div class="pop-select-spec">
+	<form method="post" id="join_group_form" action="index.php?app=groupbuy&amp;id={$group.group_id}" class="join-group J_AjaxForm">
+    	<div class="bd">
+            <div class="info pt5 pl10 pr10">
+                <img src="{$goods.default_image}" height="100" width="100" />
+                <div class="close-pop close-spec-pop" onClick="closePop();">&#xe659;</div>
+            </div>
+            <h3 class="tt">
+                购买信息
+            </h3>
+            <!-- {foreach from=$goods._specs item=spec} -->
+            <ul  class="webkit-box pt10 pl10 pr10">
+                <li class="flex1">
+                    {$spec.spec}
+                    <input ectype="spec" name="spec[{$spec.spec_id}]" type="hidden" class="J_AjaxFormFields" value="{$spec.spec}"/>
+                    <input ectype="spec_id" name="spec_id[{$spec.spec_id}]" type="hidden" class="J_AjaxFormFields" value="{$spec.spec_id}"/>
+                </li>
+                <li class="flex1">{$spec.price|price}</li>
+                <li class="flex1">{$spec.group_price|price}</li>
+                <!-- {if $group.ican.join or $group.ican.join_info} -->
+                <li class="flex1">
+                    <!-- {if $group.ican.join} -->
+                    <input style="width:70px;" name="quantity[{$spec.spec_id}]" type="text" class="quantity J_AjaxFormFields" placeholder="{$lang.buy_quantity}" />
+                    <!-- {/if}-->
+                    <!-- {if $group.ican.join_info} -->
+                    {$spec.my_qty}
+                    <!-- {/if} -->
+                </li>
+                <!-- {/if} -->
+            </ul>
+            <!-- {/foreach} -->
+            <h3 class="tt">
+                {$lang.join_user_info}
+            </h3>
+            <dl  class="input-style1 ml10 mr10">
+                <dt></dt>
+                <dd class="input-wraper"><input name="link_man" placeholder="{$lang.real_name}" type="text" class="J_AjaxFormFields" /></dd>
+            </dl>
+            <dl class="input-style1  ml10 mr10">
+                <dt></dt>
+                <dd  class="input-wraper"><input name="tel" placeholder="{$lang.tel}" type="text" class="J_AjaxFormFields" /></dd>
+            </dl>
+            <p class="tip  ml10 mr10">{$lang.join_tips}</p>
+        </div>
+        <div class="ft">
+        	<input type="hidden" class="J_AjaxFormSuccessRet J_AjaxFormFields" name="ret_url" value="{url app=groupbuy&id=$group.group_id}" />
+            <!-- {if $group.ican.join} -->
+            <input name="join" class="J_AjaxFormSubmit J_AjaxFormFields" id="join" type="submit" value="{$lang.join_groupbuy}"/>
+            <!-- {/if} -->
+            <!-- {if $group.ican.exit} -->
+            <input name="exit" style="display:none;" class="J_AjaxFormSubmit exit J_AjaxFormFields" type="submit" value="{$lang.exit_groupbuy}"/>
+            <!-- {/if} -->
+        </div>
+    </form>
+</div>

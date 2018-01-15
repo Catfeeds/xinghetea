@@ -1,0 +1,103 @@
+{include file=member.header.html} 
+<script type="text/javascript">
+$(function(){
+	$('#exclusive_form').validate({
+        errorPlacement: function(error, element){
+            var error_td = element.parent('li');
+            error_td.find('label').hide();
+            error_td.append(error);
+        },
+        success       : function(label){
+            label.remove();
+        },
+		submitHandler:function(form) {
+			if($('input[name="exclusive[discount]"]').val()=='' && $('input[name="exclusive[decrease]"]').val()=='') {
+				alert('{$lang.not_allempty}');
+				$(form).find('input[name="exclusive[discount]"]').focus();
+				$(form).find('input[type="text"]').addClass('error');
+				return;
+			}
+			else form.submit();
+		},
+        onkeyup: false,
+        rules : {
+            "exclusive[discount]" : {
+                number     : true,
+				min		   : 0.01,
+				max  	   : 9.99
+            },
+            "exclusive[decrease]" : {
+                 number    : true,
+				 min       : 0.01
+            }
+        },
+        messages : {
+            "exclusive[discount]"  : {
+                number     : '{$lang.discount_invalid}',
+                min : '{$lang.discount_invalid}',
+				max : '{$lang.discount_invalid}'
+            },
+            "exclusive[decrease]" : {
+                number  : '{$lang.decrease_number_only}',
+				min	     : '{$lang.decrease_ge_0}',
+            }
+        }
+    });
+});
+</script>
+<div id="page-promotool" class="page-promotool">
+	<div class="content">
+		<div class="totline"></div>
+		<div class="botline"></div>
+		{include file=member.menu.html}
+		<div id="right"> {include file=member.curlocal.html}
+			{include file=member.submenu.html}
+			<div class="wrap">
+				<div class="public_select">
+					<div class="promotool">
+						<div class="bundle bundle-list">
+                        	<!--{if $appAvailable neq 'TRUE'}-->
+                            <div class="notice-word"><p>{$appAvailable.msg}</p></div>
+                        	<!--{else}-->
+							<div class="notice-word">
+								<p class="yellow-big">{$lang.note_for_create}</p>
+							</div>
+							<div class="promotool-form exclusive">
+								<form id="exclusive_form" method="post">
+									<ul class="form">
+										<li>
+											<h3>{$lang.exclusive_discount}<span class="gray">({$lang.default})</span></h3>
+										</li>
+										<li>
+											<input type="text" name="exclusive[discount]" id="exclusive[discount]" class="input" value="{$exclusive.rules.discount}" />
+											<span>{$lang.zhe}</span></li>
+										<li>
+											<h3>{$lang.exclusive_decrease}</h3>
+										</li>
+										<li>
+											<input type="text" name="exclusive[decrease]" id="exclusive[decrease]" class="input" value="{$exclusive.rules.decrease}" />
+											<span>{$lang.yuan}</span></li>
+										<li>
+											<h3>{$lang.launch}</h3>
+										</li>
+										<li class="slide-checkbox-radio clearfix">
+											<input type="checkbox" name="status" value="1" id="check_1" class="slide-box slide-checkbox" {if $exclusive.status || !$exclusive} checked="checked" {/if}/>
+											<label for="check_1" class="slide-trigger"></label>
+										</li>
+										<li>
+											<input type="submit" value="{$lang.submit}" class="submit" />
+										</li>
+									</ul>
+								</form>
+							</div>
+                            <!--{/if}-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<iframe name="iframe_post" id="iframe_post" width="0" height="0"></iframe>
+{include file=footer.html} 

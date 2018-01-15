@@ -1,0 +1,44 @@
+{include file=dcenter.header.html}
+<div id="page-member">
+  <div class="main dcenter">
+      <div class="header">
+        <div class="mark-text">我的收益（元） <a class="more-link" style="margin: 0" href="{url app=dcenter&act=profit}">查看明细</a></div>
+        <div class="amount-box clearfix"> <span class="amount">{$statistics.amount|default:0}</span> <a href="mobile/index.php?app=deposit&amp;act=withdraw">提现</a></div>
+      </div>
+      <div class="team stores"> 
+        <!--{if $stores}-->
+        <div class="hd">
+          <h3 class="fs14">我分销的店铺（<span class="red">{$storescount|default:0}</span>）</h3>
+        </div>
+        <!--{foreach from=$stores item=store name=fe_store}-->
+        <div class="bd">
+           <div class="top padding10 clearfix"><span class="float-left">供货商：{$store.store_name|escape}</span><span class="float-right red">{if $store.enable_distribution}分销提成:{$store.distribution_1}%{else}<font color="#00FF00">分销关闭</font>{/if}</span></div>
+          <div class="item clearfix"><a href="{url app=store&id=$store.store_id}"><img src="{if $store.logo}{$store.logo}{else}{$store.store_logo}{/if}" height="40"></a>
+            <div class="info clearfix">
+              <p class="clearfix" style="margin-bottom:5px;"><span class="float-left">{$store.real_name|escape}</span></p>
+              <p class="clearfix gray fs12">获得利润:<span class="red fs14" style="margin-top: 8px; font-weight:bold;">＋{$store.amount|price}</span></p>
+            </div>
+            <div class="earning">
+              <a href="{url app=dcenter&act=edit&did=$store.did}" class="gray fs12"> <i class="psmb-icon-font icon-fenxiao">&#xe68a;</i>
+                <div class="title">小店设置</div>
+              </a>
+              <a href="{url act=code&did=$store.did}" class="gray fs12"> <i class="psmb-icon-font icon-fenxiao">&#xe6b0;</i>
+                <div class="title">二维码</div>
+              </a>
+              <a href="{url app=store&id=$store.store_id&did=$store.did}" class="gray fs12"> <i class="psmb-icon-font icon-fenxiao">&#xe73d;</i>
+                <div class="title">查看小店</div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!--{/foreach}-->
+        <div class="pageinfo pt10">{include file=page.bottom.html}</div>
+        <!--{else}-->
+        <div class="list-empty"> <i class="psmb-icon-font">&#xe6e5;</i>
+          <p>您还没有分销的店铺，加油分销吧！</p>
+        </div>
+        <!--{/if}--> 
+      </div>
+  </div>
+</div>
+{include file=footer.html}

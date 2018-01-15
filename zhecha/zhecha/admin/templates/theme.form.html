@@ -1,0 +1,59 @@
+{include file=header.html}
+<div id="rightTop">
+<p>
+	<b>{$form_data.text}</b>
+    <a href="javascript:window.history.back();" class="btn1" style="margin-left:10px;display:inline-block;">返回上一级</a>
+</p>
+
+</div>
+<ul id="rightCon">
+<div class="eject_con">
+    <div class="info_table_wrap">
+        <form method="post" action="index.php?app=theme&amp;act=edit&amp;type={$smarty.get.type}&template={$smarty.get.template}&style={$smarty.get.style}&model={$smarty.get.model}"  enctype="multipart/form-data">
+        <ul class="info_table edit-theme">
+        	<!--{foreach from=$form_data.config item=info key=conf}-->
+            <!--{if $info.type eq 'file'}-->
+            <li>
+            	<div class="img">
+                    <!--{if $info.text || $info.desc}-->
+					<h3>
+						{$info.text}<span>{$info.desc}</span>
+					</h3>
+                    <!--{/if}-->
+					<input type="file" name="file[{$conf}]" id="ctrl_{$conf}" size="{$info.size}" onfocus="{$info.onfocus}" onchange="{$info.onchange}" onblur="{$info.onblur}" />
+					<span>
+						<img  style="border:1px #f1f1f1 solid" width="{$info.width}" src="{if $info.value}{$site_url}/{$info.value}{/if}" />
+					</span>
+				</div>
+            </li>
+            <!--{/if}-->
+            <li class="text-model">
+            	<!--{if $info.type eq 'text'}-->
+				<h3>
+					{$info.text}<span>{$info.desc}</span>
+				</h3>
+				<input type="text" name="config[{$conf}]" id="ctrl_{$conf}" value="{$info.value}" size="{$info.size}" onfocus="{$info.onfocus}" onchange="{$info.onchange}" onblur="{$info.onblur}" class="text width9" />
+				<!--{elseif $info.type eq 'select'}-->
+                <h3>
+					{$info.text}<span>{$info.desc}</span>
+				</h3>
+				<select name="config[{$conf}]" id="ctrl_{$conf}" onchange="{$info.onchange}" class="width8 padding4">{html_options options=$info.items selected=$info.value}</select>
+			   <!--{elseif $info.type eq 'textarea'}-->
+               <h3>
+					{$info.text}
+				</h3>
+			   <textarea cols="{$info.cols}" rows="{$info.rows}" name="config[{$conf}]" id="ctrl_{$conf}" onfocus="{$info.onfocus}" onchange="{$info.onchange}" onblur="{$info.onblur}" style="width:532px;height:100px;" class="text">{$info.value}</textarea><span style="color:#999">({$info.desc})</span>
+			   <!--{elseif $info.type eq 'radio'}-->
+			   {html_radios options=$info.items checked=$info.value name=$info.name}
+			   <!--{elseif $info.type eq 'checkbox'}--> 
+			   {html_checkbox options=$info.items checked=$info.value name=$info.name}
+			   <!--{/if}-->
+               <div class="clear"></div>
+            </li>
+            <!--{/foreach}-->
+        </ul>
+        <div class="submit" style="padding:20px 0px;"><input type="submit" class="formbtn J_FormSubmit" value="{$lang.submit}" /><div class="clear"></div></div>
+        </form>
+    </div>
+</div>
+{include file=footer.html}

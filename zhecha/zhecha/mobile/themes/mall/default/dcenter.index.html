@@ -1,0 +1,38 @@
+{include file=dcenter.header.html}
+<div id="page-member">
+  <div class="main dcenter">
+    <div class="header">
+           <div class="mark-text">我的收益（元） <a class="more-link" style="margin: 0" href="{url app=dcenter&act=profit}">查看明细</a></div>
+           <div class="amount-box clearfix"> <span class="amount">{$statistics.amount|default:0}</span> <a href="mobile/index.php?app=deposit&amp;act=withdraw">提现</a></div>
+    </div>
+      <div class="outlet-nav">
+        <ul class="clearfix">
+          <li> <a href="{url app=dcenter&act=profit}"> <i class="psmb-icon-font icon-qiandaizi">&#xe77d;</i>
+            <div class="title">收益统计</div>
+            <div class="desc"><span>{$statistics.amount|default:0}</span>元</div>
+            </a> </li>
+          <li> <a href="{url app=dcenter&act=team}"> <i class="psmb-icon-font icon-wodekehu">&#xe753;</i>
+            <div class="title">我的团队</div>
+            <div class="desc"><span>{$teamscount|default:0}</span>个伙伴</div>
+            </a> </li>
+          <li> <a href="{url app=dcenter&act=order}"> <i class="psmb-icon-font icon-fenxiao">&#xe682;</i>
+            <div class="title">分销订单</div>
+            <div class="desc"><span>{$orderscount|default:0}</span>个订单</div>
+            </a> </li>
+          <li> <a href="{url app=dcenter&act=stores}"> <i class="psmb-icon-font icon-yemiantuiguang">&#xe73b;</i>
+            <div class="title">我的店铺</div>
+            <div class="desc"><span>{$storescount|default:0}</span>个分销店铺</div>
+            </a> </li>
+          <li> <a class="myinform" href="{url app=deposit}"> <i class="psmb-icon-font icon-hongbao">&#xe6e0;</i>
+            <div class="title">我的资产</div>
+            <div class="desc">资金管理系统</div>
+            </a> </li>
+          <li> <a href="{url app=dcenter&act=ranks}"> <i class="psmb-icon-font icon-icon2">&#xe722;</i>
+            <div class="title">英雄榜</div>
+            <div class="desc">实时佣金排行</div>
+            </a> </li>
+        </ul>
+      </div>
+  </div>
+</div>
+{include file=footer.html}

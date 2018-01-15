@@ -1,0 +1,46 @@
+<div class="eject_con">
+    <div class="info_table_wrap">
+        <form method="post" action="index.php?app=my_theme&amp;act=edit&amp;type={$smarty.get.type}&template={$smarty.get.template}&style={$smarty.get.style}&model={$smarty.get.model}" target="_parent"  enctype="multipart/form-data">
+        <ul class="info_table edit-theme">
+        	<!--{foreach from=$form_data.config item=info key=conf}-->
+            <!--{if $info.type eq 'file'}-->
+            <li>
+            	<div class="img">
+                    <!--{if $info.text || $info.desc}-->
+					<h3>
+						{$info.text}<span>{$info.desc}</span>
+					</h3>
+                    <!--{/if}-->
+					<input type="file" name="config[{$conf}]" id="ctrl_{$conf}" value="{$info.value}" size="{$info.size}" onfocus="{$info.onfocus}" onchange="{$info.onchange}" onblur="{$info.onblur}" />
+					<span>
+						<img  width="100" src="{$info.value}" style="vertical-align:middle" />
+					</span>
+				</div>
+            </li>
+            <!--{/if}-->
+            <li class="text-model">
+            	<!--{if $info.type eq 'text'}-->
+				<h3>
+					{$info.text}<span>{$info.desc}</span>
+				</h3>
+				<input type="text" name="config[{$conf}]" id="ctrl_{$conf}" value="{$info.value}" size="{$info.size}" onfocus="{$info.onfocus}" onchange="{$info.onchange}" onblur="{$info.onblur}" class="text width9" />
+				<!--{elseif $info.type eq 'select'}-->
+				<select name="config[{$conf}]" id="ctrl_{$conf}" onchange="{$info.onchange}" class="width8 padding4">{html_options options=$info.items selected=$config.$conf}</select>
+			   <!--{elseif $info.type eq 'textarea'}-->
+               <h3>
+					{$info.text}<span>{$info.desc}</span>
+				</h3>
+			   <textarea cols="{$info.cols}" rows="{$info.rows}" name="config[{$conf}]" id="ctrl_{$conf}" onfocus="{$info.onfocus}" onchange="{$info.onchange}" onblur="{$info.onblur}" style="width:532px;height:100px;" class="text">{$info.value}</textarea>
+			   <!--{elseif $info.type eq 'radio'}-->
+			   {html_radios options=$info.items checked=$config.$conf name=$info.name}
+			   <!--{elseif $info.type eq 'checkbox'}-->
+			   {html_checkbox options=$info.items checked=$config.$conf name=$info.name}
+			   <!--{/if}-->
+               <div class="clear"></div>
+            </li>
+            <!--{/foreach}-->
+        </ul>
+        <div class="submit"><input type="submit" class="btn" value="{$lang.submit}" /></div>
+        </form>
+    </div>
+</div>

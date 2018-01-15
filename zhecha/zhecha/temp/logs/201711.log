@@ -1,0 +1,87 @@
+Wed, 01 Nov 2017 09:23:48 +0800	[2]fsockopen(): unable to connect to :25 (����Ŀ����������ܾ����޷����ӡ�
+)	\includes\libraries\class.smtp.php	89
+Wed, 01 Nov 2017 09:41:22 +0800	[2]fsockopen(): unable to connect to :25 (����Ŀ����������ܾ����޷����ӡ�
+)	\includes\libraries\class.smtp.php	89
+Thu, 02 Nov 2017 11:33:10 +0800	[256]MySQL Error[1054]: Unknown column 'parent_id' in 'field list'
+MySQL Query:INSERT INTO ecm_promotool_setting(store_id,appid,rules,status,add_time,parent_id) VALUES('12','fullfree','a:2:{s:10:"fullamount";d:2;s:12:"fullquantity";i:1;}','1','1509564790','1')
+Wrong File:  D:\phpStudyMoreVersion\WWW\zhecha\eccore\model\model.base.php[299]	\eccore\model\mysql.php	286
+Thu, 02 Nov 2017 15:34:37 +0800	[2]fsockopen(): unable to connect to :25 (����Ŀ����������ܾ����޷����ӡ�
+)	\includes\libraries\class.smtp.php	89
+Thu, 02 Nov 2017 16:05:12 +0800	[256]MySQL Error[1054]: Unknown column 'parent_goods_id' in 'where clause'
+MySQL Query:SELECT *,g.goods_id FROM ecm_goods g WHERE parent_goods_id=110 and store_id=12
+Wrong File:  D:\phpStudyMoreVersion\WWW\zhecha\eccore\model\mysql.php[534]	\eccore\model\mysql.php	286
+Sat, 04 Nov 2017 16:23:55 +0800	[256]MySQL Error[1317]: Query execution was interrupted
+MySQL Query:SELECT count(*) FROM ecm_sessions WHERE expiry >=1509755035
+Wrong File:  D:\phpStudyMoreVersion\WWW\zhecha\eccore\model\mysql.php[458]	\eccore\model\mysql.php	286
+Tue, 07 Nov 2017 14:20:31 +0800	[256]MySQL Error[1054]: Unknown column 'parent_id' in 'where clause'
+MySQL Query:SELECT *,gift.goods_id FROM ecm_gift gift WHERE parent_id = 2 and store_id = 12
+Wrong File:  D:\phpStudyMoreVersion\WWW\zhecha\eccore\model\mysql.php[534]	\eccore\model\mysql.php	286
+Tue, 07 Nov 2017 14:49:19 +0800	[2]fsockopen(): unable to connect to :25 (����Ŀ����������ܾ����޷����ӡ�
+)	\includes\libraries\class.smtp.php	89
+Tue, 07 Nov 2017 14:51:45 +0800	[256]MySQL Error[1064]: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'user_id=12 ORDER BY meal_id desc' at line 1
+MySQL Query:SELECT meal.meal_id,price,title,meal.meal_id FROM ecm_meal meal WHERE status = 1 AND meal_id=1and user_id=12 ORDER BY meal_id desc
+Wrong File:  D:\phpStudyMoreVersion\WWW\zhecha\eccore\model\mysql.php[534]	\eccore\model\mysql.php	286
+Tue, 07 Nov 2017 14:52:02 +0800	[2]Invalid argument supplied for foreach()	\app\goods.app.php	724
+Tue, 07 Nov 2017 15:05:02 +0800	[256]MySQL Error[1054]: Unknown column 'store_id' in 'where clause'
+MySQL Query:SELECT meal.meal_id,price,title,meal.meal_id FROM ecm_meal meal WHERE status = 1 AND meal_id=6 AND store_id=12 ORDER BY meal_id desc
+Wrong File:  D:\phpStudyMoreVersion\WWW\zhecha\eccore\model\mysql.php[534]	\eccore\model\mysql.php	286
+Tue, 07 Nov 2017 15:18:45 +0800	[2]fsockopen(): unable to connect to :25 (����Ŀ����������ܾ����޷����ӡ�
+)	\includes\libraries\class.smtp.php	89
+Tue, 07 Nov 2017 15:23:32 +0800	[256]MySQL Error[1054]: Unknown column 'parent_id' in 'field list'
+MySQL Query:INSERT INTO ecm_delivery_template(name,store_id,template_types,template_dests,template_start_standards,template_start_fees,template_add_standards,template_add_fees,created,parent_id) VALUES('02','12','express;ems;post','1;1;1','1;1;1','10;20;30','1;1;1','0;0;0','1510039412','11')
+Wrong File:  D:\phpStudyMoreVersion\WWW\zhecha\eccore\model\model.base.php[299]	\eccore\model\mysql.php	286
+Thu, 09 Nov 2017 09:25:27 +0800	[256]MySQL Error[1054]: Unknown column 's.state' in 'where clause'
+MySQL Query:SELECT g.goods_id, g.type, g.goods_name, g.cate_id, g.cate_name, g.brand, g.spec_qty, g.spec_name_1, g.spec_name_2, g.if_show, g.closed, g.add_time, g.recommended, g.default_image, gs.spec_id, gs.spec_1, gs.spec_2, gs.color_rgb, gs.price,gs.price_1,gs.price_2,gs.price_3,gs.price_4,gs.price_5, gs.stock, gp.pvs, gst.views, gst.sales, gst.comments FROM ecm_goods g LEFT JOIN ecm_goods_spec gs ON g.default_spec = gs.spec_id LEFT JOIN ecm_goods_pvs gp ON g.goods_id=gp.goods_id LEFT JOIN ecm_goods_statistics gst ON g.goods_id = gst.goods_id  WHERE  g.if_show = 1 AND g.closed = 0 AND s.state = 1 AND g.cate_id_2 = '56' AND gs.spec_id IS NOT NULL  ORDER BY add_time DESC LIMIT 0,30
+Wrong File:  D:\phpStudyMoreVersion\WWW\zhecha\eccore\model\mysql.php[534]	\eccore\model\mysql.php	286
+Thu, 09 Nov 2017 09:26:10 +0800	[256]MySQL Error[1054]: Unknown column 's.state' in 'where clause'
+MySQL Query:SELECT g.goods_id, g.type, g.goods_name, g.cate_id, g.cate_name, g.brand, g.spec_qty, g.spec_name_1, g.spec_name_2, g.if_show, g.closed, g.add_time, g.recommended, g.default_image, gs.spec_id, gs.spec_1, gs.spec_2, gs.color_rgb, gs.price,gs.price_1,gs.price_2,gs.price_3,gs.price_4,gs.price_5, gs.stock, gp.pvs, gst.views, gst.sales, gst.comments FROM ecm_goods g LEFT JOIN ecm_goods_spec gs ON g.default_spec = gs.spec_id LEFT JOIN ecm_goods_pvs gp ON g.goods_id=gp.goods_id LEFT JOIN ecm_goods_statistics gst ON g.goods_id = gst.goods_id  WHERE  g.if_show = 1 AND g.closed = 0 AND s.state = 1 AND g.cate_id_2 = '56' AND gs.spec_id IS NOT NULL  ORDER BY add_time DESC LIMIT 0,30
+Wrong File:  D:\phpStudyMoreVersion\WWW\zhecha\eccore\model\mysql.php[534]	\eccore\model\mysql.php	286
+Thu, 09 Nov 2017 09:26:20 +0800	[256]MySQL Error[1054]: Unknown column 's.state' in 'where clause'
+MySQL Query:SELECT g.goods_id, g.type, g.goods_name, g.cate_id, g.cate_name, g.brand, g.spec_qty, g.spec_name_1, g.spec_name_2, g.if_show, g.closed, g.add_time, g.recommended, g.default_image, gs.spec_id, gs.spec_1, gs.spec_2, gs.color_rgb, gs.price,gs.price_1,gs.price_2,gs.price_3,gs.price_4,gs.price_5, gs.stock, gp.pvs, gst.views, gst.sales, gst.comments FROM ecm_goods g LEFT JOIN ecm_goods_spec gs ON g.default_spec = gs.spec_id LEFT JOIN ecm_goods_pvs gp ON g.goods_id=gp.goods_id LEFT JOIN ecm_goods_statistics gst ON g.goods_id = gst.goods_id  WHERE  g.if_show = 1 AND g.closed = 0 AND s.state = 1 AND g.cate_id_2 = '56' AND gs.spec_id IS NOT NULL  ORDER BY add_time DESC LIMIT 0,30
+Wrong File:  D:\phpStudyMoreVersion\WWW\zhecha\eccore\model\mysql.php[534]	\eccore\model\mysql.php	286
+Thu, 09 Nov 2017 09:46:35 +0800	[2]Missing argument 2 for GoodsApp::_get_meal_goods(), called in D:\phpStudyMoreVersion\WWW\zhecha\mobile\app\goods.app.php on line 376 and defined	\mobile\app\goods.app.php	723
+Thu, 09 Nov 2017 16:37:11 +0800	[256]MySQL Error[1062]: Duplicate entry '73-73' for key 'PRIMARY'
+MySQL Query:INSERT INTO ecm_user_priv(store_id,user_id,privs) VALUES('73','73','all')
+Wrong File:  D:\phpStudyMoreVersion\WWW\zhecha\eccore\model\mysql.php[271]	\eccore\model\mysql.php	286
+Thu, 09 Nov 2017 17:01:46 +0800	[256]MySQL Error[1054]: Unknown column 'fullfree' in 'where clause'
+MySQL Query:SELECT *,apprenewal.rid FROM ecm_apprenewal apprenewal WHERE user_id=76 and appid=fullfree
+Wrong File:  D:\phpStudyMoreVersion\WWW\zhecha\eccore\model\mysql.php[534]	\eccore\model\mysql.php	286
+Thu, 09 Nov 2017 17:02:21 +0800	[256]MySQL Error[1062]: Duplicate entry '76' for key 'PRIMARY'
+MySQL Query:INSERT INTO ecm_store(store_id,store_name,owner_name,owner_card,region_id,region_name,address,zipcode,tel,sgrade,end_time,state,recommended,sort_order,add_time,domain,certification) VALUES('76','seller7','seller6','','','','','','','1','0','1','1','65535','1510189341','','')
+Wrong File:  D:\phpStudyMoreVersion\WWW\zhecha\eccore\model\mysql.php[271]	\eccore\model\mysql.php	286
+Mon, 13 Nov 2017 10:47:28 +0800	[2]fsockopen(): unable to connect to :25 (����Ŀ����������ܾ����޷����ӡ�
+)	\includes\libraries\class.smtp.php	89
+Mon, 13 Nov 2017 11:42:59 +0800	[2]fsockopen(): unable to connect to :25 (����Ŀ����������ܾ����޷����ӡ�
+)	\includes\libraries\class.smtp.php	89
+Thu, 23 Nov 2017 15:23:21 +0800	[256]MySQL Error[1054]: Unknown column 'parent_goods_id' in 'where clause'
+MySQL Query:SELECT *,g.goods_id FROM ecm_goods g WHERE store_id=71 and parent_goods_id=110
+Wrong File:  D:\phpStudyMoreVersion\WWW\zhecha\eccore\model\mysql.php[534]	\eccore\model\mysql.php	286
+Mon, 27 Nov 2017 14:28:54 +0800	[2]Invalid argument supplied for foreach()	\app\seller_limitbuy.app.php	388
+Wed, 29 Nov 2017 10:13:27 +0800	[256]MySQL Error[1054]: Unknown column 'credit_value' in 'order clause'
+MySQL Query:SELECT g.goods_id, g.type, g.goods_name, g.cate_id, g.cate_name, g.brand, g.spec_qty, g.spec_name_1, g.spec_name_2, g.if_show, g.closed, g.add_time, g.recommended, g.default_image, gs.spec_id, gs.spec_1, gs.spec_2, gs.color_rgb, gs.price,gs.price_1,gs.price_2,gs.price_3,gs.price_4,gs.price_5, gs.stock, gp.pvs, gst.views, gst.sales, gst.comments FROM ecm_goods g LEFT JOIN ecm_goods_spec gs ON g.default_spec = gs.spec_id LEFT JOIN ecm_goods_pvs gp ON g.goods_id=gp.goods_id LEFT JOIN ecm_goods_statistics gst ON g.goods_id = gst.goods_id  WHERE  g.if_show = 1 AND g.closed = 0  AND gs.spec_id IS NOT NULL  ORDER BY credit_value desc LIMIT 0,35
+Wrong File:  D:\phpStudyMoreVersion\WWW\zhecha\eccore\model\mysql.php[534]	\eccore\model\mysql.php	286
+Wed, 29 Nov 2017 10:13:40 +0800	[256]MySQL Error[1054]: Unknown column 'credit_value' in 'order clause'
+MySQL Query:SELECT g.goods_id, g.type, g.goods_name, g.cate_id, g.cate_name, g.brand, g.spec_qty, g.spec_name_1, g.spec_name_2, g.if_show, g.closed, g.add_time, g.recommended, g.default_image, gs.spec_id, gs.spec_1, gs.spec_2, gs.color_rgb, gs.price,gs.price_1,gs.price_2,gs.price_3,gs.price_4,gs.price_5, gs.stock, gp.pvs, gst.views, gst.sales, gst.comments FROM ecm_goods g LEFT JOIN ecm_goods_spec gs ON g.default_spec = gs.spec_id LEFT JOIN ecm_goods_pvs gp ON g.goods_id=gp.goods_id LEFT JOIN ecm_goods_statistics gst ON g.goods_id = gst.goods_id  WHERE  g.if_show = 1 AND g.closed = 0  AND gs.spec_id IS NOT NULL  ORDER BY credit_value desc LIMIT 0,35
+Wrong File:  D:\phpStudyMoreVersion\WWW\zhecha\eccore\model\mysql.php[534]	\eccore\model\mysql.php	286
+Wed, 29 Nov 2017 14:26:13 +0800	[2]fsockopen(): unable to connect to :25 (����Ŀ����������ܾ����޷����ӡ�
+)	\includes\libraries\class.smtp.php	89
+Wed, 29 Nov 2017 16:30:37 +0800	[2]fsockopen(): unable to connect to :25 (����Ŀ����������ܾ����޷����ӡ�
+)	\includes\libraries\class.smtp.php	89
+Wed, 29 Nov 2017 16:30:39 +0800	[2]fsockopen(): unable to connect to :25 (����Ŀ����������ܾ����޷����ӡ�
+)	\includes\libraries\class.smtp.php	89
+Thu, 30 Nov 2017 09:45:13 +0800	[256]MySQL Error[1054]: Unknown column 'goods_id' in 'where clause'
+MySQL Query:select count(*) from ecm_collect where goods_id=90 and store_id=2
+Wrong File:  D:\phpStudyMoreVersion\WWW\zhecha\app\my_favorite.app.php[299]	\eccore\model\mysql.php	286
+Thu, 30 Nov 2017 09:48:23 +0800	[256]MySQL Error[1064]: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1512006503,2)' at line 1
+MySQL Query:INSERT INTO ecm_collect(user_id,type,item_id,keyword,add_time,store_id) values(72,'goods',90,,1512006503,2)
+Wrong File:  D:\phpStudyMoreVersion\WWW\zhecha\app\my_favorite.app.php[301]	\eccore\model\mysql.php	286
+Thu, 30 Nov 2017 09:49:24 +0800	[256]MySQL Error[1064]: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '2)' at line 1
+MySQL Query:INSERT INTO ecm_collect(user_id,type,item_id,keyword,store_id) values(72,'goods',90,,2)
+Wrong File:  D:\phpStudyMoreVersion\WWW\zhecha\app\my_favorite.app.php[301]	\eccore\model\mysql.php	286
+Thu, 30 Nov 2017 15:09:01 +0800	[2]fsockopen(): unable to connect to :25 (����Ŀ����������ܾ����޷����ӡ�
+)	\includes\libraries\class.smtp.php	89
+Thu, 30 Nov 2017 15:09:03 +0800	[2]fsockopen(): unable to connect to :25 (����Ŀ����������ܾ����޷����ӡ�
+)	\includes\libraries\class.smtp.php	89
+Thu, 30 Nov 2017 15:17:41 +0800	[2]fsockopen(): unable to connect to :25 (����Ŀ����������ܾ����޷����ӡ�
+)	\includes\libraries\class.smtp.php	89
+Thu, 30 Nov 2017 15:30:11 +0800	[2]Invalid argument supplied for foreach()	\admin\app\integral.app.php	92

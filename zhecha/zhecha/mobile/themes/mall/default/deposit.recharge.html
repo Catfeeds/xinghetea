@@ -1,0 +1,59 @@
+{include file=member.header.html} 
+<script>
+$(function(){
+	$('#deposit-recharge').submit(function(){
+		if($(this).find('input[name="money"]').val()=='' || $(this).find('input[name="money"]').val() <= 0 || isNaN($(this).find('input[name="money"]').val())) {
+			layer.open({content:'{$lang.recharge_money_error}', time: 5});
+			return false;
+		}
+	});
+})
+</script>
+<div class="deposit margin10">
+	<div class="deposit-withdraw deposit-recharge">
+		<div class="notice-word">
+			<p>可以通过线上为自己的账户充值，充值成功后即时到账</p>
+		</div>
+		<form method="post" id="deposit-recharge">
+			<div class="title clearfix">
+				<h2 class="float-left">充值到您的预存款账户</h2>
+			</div>
+			<div class="form">
+				
+				<dl class="bank-list clearfix" ectype="online">
+					<dt class="mb10 hidden">充值渠道：</dt>
+					<dd class="rebuildWrap">
+						<ul class="ui-list-icons clearfix  rebuildInput">
+							<!--{foreach from=$payments item=payment name=fe_payment}-->
+							<li class="clearfix">
+								<input class="float-left" {if $smarty.foreach.fe_payment.first} checked="checked"{/if} type="radio" name="payment_code" id="payment_{$payment.payment_code}" value="{$payment.payment_code}" />
+								<label class="float-left  icon-box current" for="payment_{$payment.payment_code}" >
+									<span class="icon-cashier icon-cashier-{$payment.payment_code}">&nbsp;</span>
+								</label>
+							</li>
+							<!--{/foreach}-->
+						</ul>
+					</dd>
+				</dl>
+				
+				<dl class="clearfix">
+					<dt>&nbsp;</dt>
+					<dd>
+						<input  placeholder="充值金额,单位元" type="text" name="money" class="input-s1" value="" />
+					</dd>
+				</dl>
+				<dl class="clearfix">
+					<dt>&nbsp;</dt>
+					<dd>
+						<input placeholder="充值备注" name="remark" class="input-s1"  type="text"/>
+					</dd>
+				</dl>
+				<dl class="clearfix">
+					<dt>&nbsp;</dt>
+					<dd class="submit"><input class="btn-alipay" type="submit" value="下一步" /></dd>
+				</dl>
+			</div>
+		</form>
+	</div>
+</div>
+{include file=footer.html} 

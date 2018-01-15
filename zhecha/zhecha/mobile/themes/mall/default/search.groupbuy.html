@@ -1,0 +1,68 @@
+{include file=header.html}
+<script type="text/javascript" src="{lib file=search_groupbuy.js}" charset="utf-8"></script>
+<script type="text/javascript">
+$(function(){
+	$.each($('.countdown'),function(){
+		var theDaysBox  = $(this).find('.NumDays');
+		var theHoursBox = $(this).find('.NumHours');
+		var theMinsBox  = $(this).find('.NumMins');
+		var theSecsBox  = $(this).find('.NumSeconds');
+			
+		countdown(theDaysBox, theHoursBox, theMinsBox, theSecsBox)
+	});
+})
+</script>
+<style type="text/css">
+.group-list{background:#fff;overflow:hidden;}
+.group-list ul{margin-bottom:-1px;}
+.group-list ul li{padding:0 10px;}
+.group-list ul li a{display:block;border-bottom:1px solid #e2e2e2;padding:10px 0;}
+.group-list ul li a dl dt img{display:block;width:100px;height:100px;}
+.group-list ul li a dl dd h3{line-height:18px;height:36px;}
+.group-list ul li a dl dd .detail{margin-top:10px;}
+.group-list ul li a dl dd .detail b{color: #f23030;font-size:18px;font-weight:normal;line-height:27px;}
+.group-list ul li a dl dd .detail ins{font-size:14px;margin-right:3px;}
+.group-list ul li a dl dd .detail del{color:#999;line-height:18px;}
+.group-list ul li a dl dd .detail .rp{text-align:right;}
+.group-list ul li a dl dd .detail .rp  .buy-btn{width: 62px;height: 27px;line-height: 27px;background-color: #f23030;font-size: 14px;bottom: 32px;-webkit-border-radius: 2px;border-radius: 2px;display:inline-block;color:#fff;text-align:center;}
+.group-list ul li a dl dd .detail .rp .countdown,.group-list ul li a dl dd .detail .rp .countdown > *{font-size:12px;line-height:18px;color:#999;}
+</style>
+<div id="page-groupbuy">
+	<div class="group-list">
+    	<ul>
+        	<!-- {foreach from=$groupbuy_list item=group name=fe_group} -->
+        	<li>
+        		<a href="{url app=groupbuy&id=$group.group_id}">
+                	<dl class="webkit-box">
+                    	<dt><img src="{$group.default_image}" /></dt>
+                        <dd class="flex1 ml10">
+                        	<h3 class="line-clamp-2">{$group.group_name|escape}</h3>
+                            <div class="detail webkit-box">
+                            	<div class="lp flex1">
+                                	<b class="block"><ins>&yen;</ins>{$group.group_price}</b>
+                                    <del class="block mt5">{$group.price|price}</del>
+                                </div>
+                                <div class="rp">
+                                	<span class="buy-btn">去参团</span>
+                                    <div class="countdown mt5"><i class="tm NumDays">{$group.lefttime.d}</i><em>天 </em><i class="tm NumHours">{$group.lefttime.h}</i><em>小时</em><i class="tm NumMins">{$group.lefttime.m}</i><em>分</em><i class="tm NumSeconds">{$group.lefttime.s}</i><em>秒</em>结束</div>
+                                </div>
+                            </div>
+                        </dd>
+                    </dl>
+                </a>
+        	</li>
+            <!--{foreachelse}-->
+            <div class="no-record no-record-font">
+                 <div class="no-record-ico"><i></i></div>
+                 <dl>
+                     <dt>{$lang.no_groupbuy}</dt>
+                     <dd></dd>
+                 </dl>
+                 <a href="index.php" class="btn">返回首页</a>
+            </div>
+            <!--{/foreach}-->
+        </ul>
+	</div>
+</div>
+{include file=page.bottom.html}
+{include file=footer.html}

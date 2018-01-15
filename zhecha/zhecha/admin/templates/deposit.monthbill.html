@@ -1,0 +1,33 @@
+{include file="header.html"}
+<div id="rightTop">
+  <p>{$lang.deposit_manage}</p>
+  <ul class="subnav">
+    <li><a class="btn1" href="index.php?app=deposit">{$lang.manage}</a></li>
+    <li><a class="btn1" href="index.php?app=deposit&amp;act=tradelist">{$lang.trade_manage}</a></li>
+    <li><a class="btn1" href="index.php?app=deposit&amp;act=rechargelist">{$lang.recharge_manage}</a></li>
+    <li><a class="btn1" href="index.php?app=deposit&amp;act=setting">{$lang.system_setting}</a></li>
+    <li><span>{$lang.download_monthbill}</span></li>
+  </ul>
+</div>
+<div id="flexigrid"></div>
+<script type="text/javascript">
+$(function(){
+	var user_id = '{$member.user_id}';
+	var data_url = 'index.php?app=deposit&act=get_monthbill_xml&user_id='+user_id;
+    $("#flexigrid").flexigrid({
+    	url: data_url,
+    	colModel : [
+    		{display: '操作', name : 'operation', width : 100, sortable : false, align: 'center', className: 'handle'},
+			{display: '月份', name : 'month', width : 100, sortable : true, align: 'center'},
+			{display: '收入笔数', name : 'income_count', width : 100, sortable : true, align: 'center'},
+    		{display: '收入金额（元）', name : 'income_money', width : 100, sortable : true, align: 'center'},
+			{display: '支出笔数', name : 'outlay_count', width : 100, sortable : true, align: 'center'},
+    		{display: '支出金额（元）', name : 'outlay_money', width : 100, sortable : true, align: 'center'},    		
+			{display: '服务费笔数', name : 'charge_count', width: 100, sortable : true, align : 'center'},
+			{display: '服务费金额（元）', name : 'charge_money', width: 100, sortable : true, align : 'center'},  		
+    		],
+    	title: '用户名 : <em class="red">{$member.user_name}</em>'+' 月账单列表'
+    });
+});
+</script>
+{include file="footer.html"} 

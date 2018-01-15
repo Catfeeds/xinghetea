@@ -1,0 +1,89 @@
+一、支付宝电脑网站支付接口申请：
+
+申请地址：http://www.aliapy.com  在这个页面登陆后，
+
+进入 https://b.alipay.com/signing/productDetail.htm?productId=I1011000290000001000  申请电脑网站支付接口
+
+
+申请好了之后到：后台-》设置-》支付方式-》支付宝-》启用-》配置-》填写信息， 接口类型填写即时到帐交易接口
+
+
+二、物流跟踪申请key步骤：
+
+
+http://www.kuaidi100.com/openapi/api_2_02.shtml
+
+去这里申请一下接口，不用注册的，按照他的说法做就行，审核通过之后，会把key发到你的邮箱，得到key后，在后台-》拓展-》快递跟踪-》填写key
+
+
+三、账号通KEY申请
+
+1.QQ账号登陆KEY申请
+
+https://connect.qq.com/manage.html
+
+创建应用-》网站-》填写相关信息
+
+回调地址填写：  http://你的网站网址/external/plugins/qqconnect/callback.php
+
+
+
+
+2.支付宝登陆申请KEY：
+
+
+https://b.alipay.com/order/productDetail.htm?productId=2015090914994961
+
+
+3.新浪微博申请KEY：
+
+http://open.weibo.com/authentication/
+
+4.微信登陆申请KEY
+
+申请地址：https://open.weixin.qq.com/cgi-bin/frame?t=home/web_tmpl&lang=zh_CN
+
+回调地址填：您的网站地址，如： www.psmoban.com
+
+
+
+申请好了之后，到网站后台-》拓展-》插件管理-》启用-》填写key即可
+
+
+
+
+四、手机短信接口申请
+
+去： http://www.smschinese.cn/reg.shtml  注册一个账号，并充值短信，注册之后，会得到 一个 密钥。 然后到
+如果是V3)后台-》网站-》手机短信-》设置-》填写用户名，短信秘钥
+如果是V2)后台-》拓展-》模块管理-》手机短信-》安装-》管理-》设置-》填写用户名，短信密钥
+
+
+五、如果购买了手机版，那么还需要申请支付宝手机网站支付接口
+
+申请地址：https://b.alipay.com/order/productDetail.htm?productId=2014110308142133
+
+
+申请好了之后到：后台-》设置-》支付方式-》支付宝（WAP）-》启用-》配置-》填写信息， 接口类型填写即时到帐交易接口
+
+
+六：微信支付接口申请：
+
+到微信公众平台（https://mp.weixin.qq.com），注册账户，注册类型选服务号（以企业形式注册），提交信息之后， 支付 300元年费，等待微信审核。审核通过之后，到 微信公众平台后台申请微信支付。
+微信支付的申请过程比较复杂。具体细节可跟我们咨询。
+配置：1）微信公众平台-》开发-》接口权限-》网页授权获取用户基本信息-》填写域名（含www）
+      2）微信公众平台-》设置-》公众号设置-》功能设置-》JS接口安全域名-》填写域名（含www）
+      3）微信公众平台-》微信支付-》开发配置-》公众号支付-》支付授权目录-》填写http://www.abc.com/mobile/
+
+
+七、中国银联支付接口申请：
+
+进入：https://open.unionpay.com/ajweb/index
+点击：产品介绍-》网关支付-》我要入网->登录（或注册）
+
+八、百度地图KEY申请 
+   
+   申请地址： http://lbsyun.baidu.com/apiconsole/key/create   创建应用-》应用类型 选浏览器端， 启用服务默认，IP白名单 填：0.0.0.0/0 
+   得到KEY后，到后台-》设置-》网站设置-》基本信息-》百度地图KEY-》浏览器KEY
+
+

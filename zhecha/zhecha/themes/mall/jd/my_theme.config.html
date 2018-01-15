@@ -1,0 +1,32 @@
+{include file=member.header.html}
+<div class="content">
+    {include file=member.menu.html}
+    <div id="right">
+        {include file=member.curlocal.html}
+		{include file=member.submenu.html}
+        <div class="wrap">
+			<div class="public">
+				<div class="information">
+                	<div class="model-theme">
+                    	<!--{foreach from=$form_data item=form key=key}-->
+						<div class="box" ectype="dialog" dialog_id="my_payment_install" dialog_title="{$form.text}" uri="index.php?app=my_theme&amp;act=edit&model={$key}&style={$smarty.get.style}&template={$smarty.get.template}&type={$smarty.get.type}" dialog_width="600">
+                        	<div class="wrap-box">
+                            	<h3>{$form.text}</h3>
+                                <p>{$form.desc}</p>
+                            </div>
+                        </div>   
+                        <!--{/foreach}-->
+                        <div class="clear"></div>
+                    </div>
+				</div>
+			</div>
+		</div>
+        <div class="clear"></div>
+        <div class="adorn_right1"></div>
+        <div class="adorn_right2"></div>
+        <div class="adorn_right3"></div>
+        <div class="adorn_right4"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+{include file=footer.html}

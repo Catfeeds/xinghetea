@@ -1,0 +1,38 @@
+{include file=member.header.html} 
+<div id="page-seller-order">
+	<div class="adjust-fee-body padding10">
+		<form class="J_AjaxForm" method="post">
+			<div class="clearfix">
+				<p class="float-left">{$lang.buyer_name}{$lang.colon}{$order.buyer_name|escape}</p>
+				<p class="float-right">{$lang.order_sn}:{$order.order_sn}</p>
+			</div>
+			<ul class="foll_in mt20">
+				<li class="mt10">
+					<p>{$lang.goods_amount}{$lang.colon}<strong class="color8">{$order.goods_amount|price}</strong></p>
+					
+				</li>
+				<li class="mt10">
+					<p>{$lang.shipping_fee}{$lang.colon}<strong class="color8">{$shipping.shipping_fee|price}</strong></p>
+				</li>
+                
+                <li class="mt10">
+					<p>{$lang.order_discount}{$lang.colon}<strong class="color8">{$order.discount|price}</strong></p>
+				</li>
+                
+                <li>
+                <li class="mt10">
+					<p>{$lang.order_amount}{$lang.colon}<strong class="color8">{$order.order_amount|price}</strong></p>
+					<p>
+						<input type="text" id="order_amount_input" class="J_AjaxFormFields input-s1 mt5" name="order_amount" value="{$order.order_amount}" />
+					</p>
+				</li>
+                
+				<li class="mt10">{$lang.adjust_fee_notice}</li>
+			</ul>
+			<div class="mt10">
+				<input type="submit" class="J_AjaxFormSubmit btn-alipay mt20" value="{$lang.confirm}" />
+			</div>
+		</form>
+	</div>
+</div>
+{include file=footer.html}

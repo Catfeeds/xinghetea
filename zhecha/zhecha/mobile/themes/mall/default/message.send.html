@@ -1,0 +1,128 @@
+﻿{include file=member.header.html}
+<script type="text/javascript">
+$(function(){
+    $('a[ectype="to_user_name"]').click(function (){
+        var str = $('input[name="to_user_name"]').val();
+        var id = $(this).attr('id');
+        if(str.indexOf(id) < 0){
+            doFriend(id, 'add');
+        }else{
+            doFriend(id, 'delete');
+        }
+		
+		$(this).toggleClass('active');
+    });
+	
+	$('.showFrields').popLayer({
+		popContent: '.popup', 
+		closeBtn  : '.closePop',
+		direction : 'right',
+		'fixedBody' : true
+	});
+});
+$(document).ready(function(){
+  $('#send_form').validate({
+        errorPlacement: function(error, element){
+            $(element).next('.field_notice').hide();
+            $(element).after(error);
+            $(element).attr('name')=='msg_content' && $(element).after().css({display:'block'});
+        },
+        success       : function(label){
+            label.addClass('validate_right').text('OK!');
+        },
+        rules : {
+            to_user_name : {
+                required   : true
+            },
+            msg_content : {
+                required   : true
+            }
+        },
+        messages : {
+            to_user_name : {
+                required : '{$lang.to_id_empty}'
+            },
+            msg_content : {
+                required   : '{$lang.message_content_empty}'
+            }
+        }
+    });
+});
+function doFriend(user_name, action){
+    var input_name = $("input[name='to_user_name']").val();
+    var key, i = 0;
+    var exist = false;
+    var arrOld = new Array();
+    var arrNew = new Array();
+    input_name = input_name.replace(/\uff0c/g,',');
+    arrOld     = input_name.split(',');
+    for(key in arrOld){
+        arrOld[key] = $.trim(arrOld[key]);
+        if(arrOld[key].length > 0){
+            arrOld[key] == user_name &&  action == 'delete' ? null : arrNew[i++] = arrOld[key];
+            arrOld[key] == user_name ? exist = true : null;
+        }
+    }
+    if(!exist && action == 'add'){
+        arrNew[i] = user_name;
+    }
+    $("input[name='to_user_name']").val(arrNew);
+}
+</script>
+<div id="page-message">
+	<div class="send-message margin10">
+    	<form method="post" enctype="multipart/form-data" id="send_form"  class="J_AjaxForm">
+        	<dl class="input-style1 webkit-box">
+				<dd class="input-wraper flex1">
+                	<input placeholder="{$lang.to_user_name}" type="text" value="{$to_user_name}"  name="to_user_name"  id="to_user_name" class="J_AjaxFormFields input-s1"/>
+				</dd>
+                <!--{if !$to_user_name}-->
+                <!--<dd class="customer-icon-font f99 showFrields">&#xe75b;</dd>-->
+                <!--{/if}-->
+		   </dl>
+           <dl class="input-style1 mt10">
+           	   <dd class="textarea">
+           	   	  <textarea  class="J_AjaxFormFields input-s1" name="msg_content" placeholder="{$lang.content}" style="background:#fff; font-size:1.125rem"></textarea>
+               </dd>
+           </dl>
+           <dl class="notice mt10">
+           	   <dt>{$lang.msg_instruction}</dt>
+           	   <dd>{$lang.code_example}</dd>
+           </dl>
+           <dl class="clearfix mt20 pt10 pb10">
+			   <dd>
+				  <input type="hidden" name="ret_url" class="J_AjaxFormFields J_AjaxFormSuccessRet" value="{url app=message&act=newpm}" />
+				  <input type="submit" class="J_AjaxFormSubmit btn-alipay" value="{$lang.submit}" />
+                </dd>
+		   </dl>
+        </form>
+    </div>
+</div>
+<!--{if !$to_user_name}-->
+<section class="record-filter popup"  style="right:-110%;left:110%;top:0;bottom:0;position:fixed;background:#fff;z-index:99;">
+	<div id="min-header" class="w-full">
+      <div class="bar-wrap J_BarWrap">
+        <div class="top-bar" style="position:absolute;">
+          <a href="javascript:;" class="pageback closePop"><span></span></a>
+          <h2 class="yahei">好友列表({$friend_num})</h2>
+        </div>
+      </div>
+    </div>
+    <ul class="friends-list" style="margin-top:44px;">
+       <!--{foreach from=$friends item=friend}-->
+       <li><a  class="box-align-center" href="javascript:void(0);" id="{$friend.user_name|escape}" ectype="to_user_name"><img src="{$friend.portrait}" /><em class=" flex1">{$friend.user_name|escape}</em><span class="ico"></span></a></li>
+       <!--{foreachelse}-->
+       <div class="notice">
+           <div class="no-record no-record-font">
+                 <div class="no-record-ico"><i></i></div>
+                 <dl>
+                     <dt>{$lang.no_friends}</dt>
+                     <dd></dd>
+                 </dl>
+            </div>
+        </div>
+       <!--{/foreach}-->
+    </ul>
+</section>
+<!--{/if}-->
+{include file=footer.html}

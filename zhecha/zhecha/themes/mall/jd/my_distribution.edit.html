@@ -1,0 +1,71 @@
+<script type="text/javascript">
+$(function(){
+    $('#cancel_button').click(function(){
+        DialogManager.close('my_distribution_edit');
+    });
+    $('#my_distribution_edit').validate({
+    errorLabelContainer: $('#warning'),
+    invalidHandler: function(form, validator) {
+           $('#warning').show();
+    },
+     rules : {
+            distribution_1 : {
+                required   : true,
+                number : true
+            },
+			distribution_2 : {
+                required   : true,
+                number : true
+            },
+			distribution_3 : {
+                required   : true,
+                number : true
+            }
+        },
+        messages : {
+            distribution_1  : {
+                required   : '{$lang.invoice_no_empty}',
+				number : '{$lang.number_only}'
+            },
+			distribution_2 : {
+                required   : '{$lang.invoice_no_empty}',
+				number : '{$lang.number_only}'
+            },
+			distribution_3 : {
+                required   : '{$lang.invoice_no_empty}',
+				number : '{$lang.number_only}'
+            }
+        }
+    });
+});
+</script>
+<style type="text/css">
+.ajax_form_block { border-bottom:#dadada 1px dotted; padding-bottom:15px; padding-top:15px; }
+</style>
+<div class="eject_con">
+    <form id="my_distribution_edit"  method="post" target="my_distribution" action="index.php?app=my_distribution&act=edit&goods_id={$goods.goods_id}">
+    <div class="content_line">
+    <div id="warning"></div>
+    {$lang.goods_name}&nbsp;&nbsp;:<strong class="color8">{$goods.goods_name|escape}</strong></div>
+    <div class="content_line">
+        <ul class="foll_in">
+            <li style="width:380px; margin-bottom:10px; height:25px;">
+                <h3>{$lang.distribution_1}:</h3>
+                <p style="width:280px; float:left;"><input type="text" name="distribution_1" class="text width_short"  value="{$goods.distribution_1|default:0}" /> % <span class="padding1">{$lang.distribution_note}</span></p>
+            </li>
+            <li style="width:380px; margin-bottom:10px;  height:25px;">
+                <h3>{$lang.distribution_2}:</h3>
+                <p style="width:280px; float:left;"><input type="text" name="distribution_2" class="text width_short"  value="{$goods.distribution_2|default:0}" /> % <span class="padding1">{$lang.distribution_note}</span></p>
+            </li>
+            <li style="width:380px; margin-bottom:10px;  height:25px;">
+                <h3>{$lang.distribution_3}:</h3>
+                <p style="width:280px; float:left;"><input type="text" name="distribution_3" class="text width_short"  value="{$goods.distribution_3|default:0}" /> % <span class="padding1">{$lang.distribution_note}</span></p>
+            </li>
+        </ul>
+    </div>
+    <div class="wrap_btn">
+        <input type="submit" id="confirm_button" class="btn1" value="{$lang.confirm}" />
+        <input type="button" id="cancel_button" class="btn2" value="{$lang.cancel}" />
+    </div>
+    </form>
+</div>

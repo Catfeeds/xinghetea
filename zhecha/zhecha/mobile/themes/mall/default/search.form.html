@@ -1,0 +1,29 @@
+{include file=header.html} 
+<style type="text/css">
+#header{display:none;}
+</style>
+<!---------------------真实的购物车--------------------------------->
+<div class="pageSearchBox">
+    <div class="true-search-box">
+        <div class="top-bar">
+            <h2>请输入你要搜索的商品名称</h2>
+            <span class="close"></span>
+        </div>
+        <div class="search-form padding10">
+            <div class="input-wraper">
+               <form method="get">
+                   <input type="hidden" name="app" value="search" />
+                   <p class="input-child-wraper"><input class="text-input" name="keyword" placeholder="请输入你要搜索的商品名称"  /></p>
+                   <input type="submit" class="true-submit" value="" />
+               </form>
+            </div>
+        </div>
+        <div class="hot-search padding10 clearfix">
+            <!--{foreach from=$keyword item=hot_search}-->
+            <a href="{url app=search&keyword=$hot_search|escape:url}">{$hot_search|escape}</a>
+            <!--{/foreach}-->
+        </div>
+    </div>
+</div>
+<!-----------------------------end-------------------------------->
+{include file=footer.html} 

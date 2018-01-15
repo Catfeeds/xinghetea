@@ -1,0 +1,51 @@
+{include file=member.header.html}
+<div class="deposit margin10">
+	<div class="deposit-withdraw-confirm">
+		<div class="notice-word">
+			<p>转出成功后，对方会立即收到账款</p>
+		</div>
+		<form class="J_AjaxForm" method="post">
+			<div class="title"> 确认转账信息 </div>
+			<div class="form">
+				<div class="confirm-info">
+					<dl class="clearfix">
+						<dt>收款人：</dt>
+						<dd> <strong>{$party.real_name}</strong> {$party.account} </dd>
+					</dl>
+					<dl class="clearfix">
+						<dt>转账金额：</dt>
+						<dd> <span class="money">{$transfer.money}</span> 元 </dd>
+					</dl>
+					<!--{if $transfer.fee gt 0}-->
+					<dl class="clearfix">
+						<dt>手续费：</dt>
+						<dd> <span>{$transfer.fee}</span> 元 </dd>
+					</dl>
+					<!--{/if}--> 
+				</div>
+				<div class="confirm-form">
+					<dl class="clearfix">
+						<dt>&nbsp;</dt>
+						<dd>
+							<input  placeholder="支付密码" type="password" name="password" class="J_AjaxFormFields input-s1" value="" />
+						</dd>
+					</dl>
+					<dl class="clearfix">
+						<dt>&nbsp;</dt>
+						<dd class="captcha">
+							<input placeholder="{$lang.captcha}"  type="text" name="captcha" class="J_AjaxFormFields input-s1 input-s1-w1" id="captcha1" />
+							<a href="javascript:change_captcha($('#captcha'));" class="renewedly"><img id="captcha" src="{$real_site_url}/index.php?app=captcha&amp;{$random_number}" /></a> </dd>
+					</dl>
+					<dl class="clearfix">
+						<dt>&nbsp;</dt>
+						<dd class="submit">
+							<input type="hidden" name="ret_url" class="J_AjaxFormFields J_AjaxFormSuccessRet" value="{url app=deposit}" />
+							<input type="submit" class="J_AjaxFormSubmit btn-alipay" value="确认转账" />
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+{include file=footer.html} 

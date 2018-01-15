@@ -1,0 +1,53 @@
+{include file=header.html} 
+<script type="text/javascript" src="{lib file=mobile/cart.js}" charset="utf-8"></script> 
+<div id="main">
+  <div id="page-cart" class="page-cart page-body">
+    <form method="post" class="J_Cart">
+      <!--{foreach from=$myCart.carts item=cart key=store_id}-->
+      <div class="store-each cart-it mt10 J_Store-{$store_id}">
+        <div class="store-info">
+          <div class="info clearfix">
+            <h3>
+              <input class="rebuild-checkbox J_SelectAll"  name="store_id" type="checkbox"  id="{$store_id}" {if !$selectedByUser}checked="checked"{elseif  in_array($store_id, $selectedByUser.storeAll)} checked="checked"{/if} value="{$store_id}"/>
+              <label for="{$store_id}"><ins>&#xe676;</ins>{$cart.store_name|escape}</label>
+           	</h3>
+            <p class="float-right edit pointer J_Edit" store_id="{$store_id}">编辑</p>
+          </div>
+        </div>
+        <ul class="padding10" style="padding-top:0;">
+          <!--{foreach from=$cart.goods item=goods name=fe_goods}-->
+          <li class="J_CartItem-{$goods.rec_id} J_GoodsEach pt10 pb10">
+            <div class="it clearfix relative"> 
+            	<div class="select float-left"><input type="checkbox" name="buy[{$goods.rec_id}]" store_id="{$store_id}" value="{$store_id}:{$goods.rec_id}:{$goods.goods_id}" class="J_SelectGoods" {if !$selectedByUser}checked="checked"{elseif in_array($goods.rec_id, $selectedByUser.goodsList)} checked="checked"{/if} />
+                 </div>
+            	<div class="pic"> <a  href="{url app=goods&id=$goods.goods_id&store_id=$goods.store_id}"><img src="{$goods.goods_image}"  width="100" height="100" alt="{$goods.goods_name|escape}" /></a></div>
+              <div class="detail">
+                <div class="attr"> <a href="{url app=goods&id=$goods.goods_id&store_id=$goods.store_id}" class="desc">
+                  <h4>{$goods.goods_name|escape}</h4>
+                  </a>
+                  <p class="props">{$goods.specification|escape}</p>
+                </div>
+                <div class="price clearfix"> <em class="J_ItemPrice-{$goods.rec_id} float-left">{$goods.price|price}+{$goods.max_exchange}积分</em> <ins class="float-right">x<i ectype="quantity">{$goods.quantity}</i></ins>
+                  <dd class="hidden J_ItemSubtotal-{$goods.rec_id} J_GetSubtotal" price="{$goods.subtotal}" exchange="{$goods.subtotal_exchange}"></dd>
+                </div>
+              </div>
+              <div class="hidden detail hidden-part"> <span class="quantity-handle block"> 
+              	<i onclick="decrease_quantity({$goods.rec_id});"  style="left:0px;"><ins class="pointer"></ins></i>
+                <input id="input_item_{$goods.rec_id}" type="text" class="J_GetQuantity" value="{$goods.quantity}" orig="{$goods.quantity}" changed="{$goods.quantity}" onkeyup="change_quantity({$store_id}, {$goods.rec_id}, {$goods.spec_id}, this);" />
+                <i onclick="add_quantity({$goods.rec_id});" style="right:44px;" class="add"><ins class="pointer"></ins></i> </span>
+                <p class="mt10 ml10 props">{$goods.specification|escape}</p>
+                <a class="del" href="javascript:drop_cart_item({$store_id}, {$goods.rec_id});" onclick="javascript:return confirm('{$lang.drop_confirm}');">{$lang.drop}</a> </div>
+            </div>
+          </li>
+          <!--{/foreach}-->
+        </ul>
+      </div>
+      <!--{/foreach}-->
+      <div class="go2order clearfix">
+        <p class="float-left ml10"> <span>{$lang.goods_amount}{$lang.colon}</span> <strong class="price fs14 strong mr20 J_CartAllAmount">{$myCart.allAmount|price}+{$myCart.allAmount_exchange}积分</strong> </p>
+        <input type="submit" class="btn float-right border-0 pointer" value="去结算" />
+      </div>
+    </form>
+  </div>
+</div>
+{include file=footer.html} 

@@ -1,0 +1,34 @@
+{include file=member.header.html}
+<div id="page-my-profile">
+	<div class="page-body my-profile add-address mt10">
+		<form class="J_AjaxForm" method="post">
+			<ul class="padding10">
+				<li>
+					<label>{$lang.gender}: </label>
+					<label>
+						<input type="radio" class="J_AjaxFormFields" name="gender" value="0" {if $profile.gender eq 0}checked="checked"{/if} />
+						{$lang.unknown} </label>
+					<label>
+						<input type="radio" class="J_AjaxFormFields" name="gender" value="1" {if $profile.gender eq 1}checked="checked"{/if} />
+						{$lang.male} </label>
+					<label>
+						<input type="radio" class="J_AjaxFormFields" name="gender" value="2" {if $profile.gender eq 2}checked="checked"{/if} />
+						{$lang.female} </label>
+				</li>
+				<li class="mt20">
+					<input type="text" class="J_AjaxFormFields input" name="real_name" id="real_name" value="{$profile.real_name|escape}" placeholder="{$lang.real_name}"/>
+				</li>
+				<li>
+					<input type="text" class="J_AjaxFormFields input" placeholder="{$lang.birthday}" id="birthday" name="birthday" value="{$profile.birthday|escape}" />
+				</li>
+				<li>
+					<input type="text" class="J_AjaxFormFields input" id="im_qq" name="im_qq" value="{$profile.im_qq|escape}" placeholder="{$lang.im_qq}"/>
+				</li>
+				<li>
+					<input type="submit" class="J_AjaxFormSubmit btn-alipay" value="{$lang.save_edit}" />
+				</li>
+			</ul>
+		</form>
+	</div>
+</div>
+{include file=footer.html} 

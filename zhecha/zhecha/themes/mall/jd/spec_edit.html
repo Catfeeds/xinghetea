@@ -1,0 +1,65 @@
+<div class="eject_con">
+    <div id="warning"></div>
+    <div class="edit_table">
+        <p>{$goods.goods_name|escape}</p>
+        <form action="index.php?app=my_goods&amp;act=spec_edit&amp;id={$goods.goods_id}" method="POST" target="iframe_post">
+        <div class="edit_table_box">
+            <table>
+                <tr>
+                    <!--{if $goods.spec_name_1}--><th class="width2">{$goods.spec_name_1|escape}</th><!--{/if}-->
+                    <!--{if $goods.spec_name_2}--><th>{$goods.spec_name_2|escape}</th><!--{/if}-->
+                    <th>{$lang.price}</th>
+                    <!-- vip_price begin -->
+                    <!-- {if !$vip_price_status_off} -->
+                    <!-- {if $price_1} -->
+                    <th>{$lang.price_1}</th>
+                    <!-- {/if} -->
+					<!-- {if $price_2} -->
+                    <th>{$lang.price_2}</th>
+                    <!-- {/if} -->
+					<!-- {if $price_3} -->
+                    <th>{$lang.price_3}</th>
+                    <!-- {/if} -->
+					<!-- {if $price_4} -->
+                    <th>{$lang.price_4}</th>
+                    <!-- {/if} -->
+					<!-- {if $price_5} -->
+                    <th>{$lang.price_5}</th>
+                    <!-- {/if} -->
+                    <!-- {/if} -->
+                    <!-- vip_price end -->
+                    <th>{$lang.stock}</th>
+                </tr>
+                <!--{foreach from=$goods.gs item=spec}-->
+                <tr>
+                    <!--{if $goods.spec_name_1}--><td class="align2">{$spec.spec_1|escape}</td><!--{/if}-->
+                    <!--{if $goods.spec_name_2}--><td class="align2">{$spec.spec_2|escape}</td><!--{/if}-->
+                    <td class="align2"><input type="text" class="text width1" name="price[{$spec.spec_id}]" value="{$spec.price}" /></td>
+                    <!-- vip_price begin -->
+                    <!-- {if !$vip_price_status_off} -->
+                    <!-- {if $price_1} -->
+                    <td class="align2"><input type="text" class="text width1" name="price_1[{$spec.spec_id}]" value="{$spec.price_1}" /></td>
+                    <!-- {/if} -->
+					<!-- {if $price_2} -->
+                    <td class="align2"><input type="text" class="text width1" name="price_2[{$spec.spec_id}]" value="{$spec.price_2}" /></td>
+                    <!-- {/if} -->
+					<!-- {if $price_3} -->
+                    <td class="align2"><input type="text" class="text width1" name="price_3[{$spec.spec_id}]" value="{$spec.price_3}" /></td>
+                    <!-- {/if} -->
+					<!-- {if $price_4} -->
+                    <td class="align2"><input type="text" class="text width1" name="price_4[{$spec.spec_id}]" value="{$spec.price_4}" /></td>
+                    <!-- {/if} -->
+					<!-- {if $price_5} -->
+                    <td class="align2"><input type="text" class="text width1" name="price_5[{$spec.spec_id}]" value="{$spec.price_5}" /></td>
+                    <!-- {/if} -->
+                    <!-- {/if} -->
+                    <!-- vip_price end -->
+                    <td class="align2"><input type="text" class="text width1" name="stock[{$spec.spec_id}]" value="{$spec.stock}" /></td>
+                </tr>
+                <!--{/foreach}-->
+            </table>
+        </div>
+        <div class="submit"><input type="submit" class="btn" value="{$lang.save}" /></div>
+        </form>
+    </div>
+</div>

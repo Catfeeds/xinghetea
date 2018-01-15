@@ -1,0 +1,77 @@
+{include file=member.header.html} 
+<script type="text/javascript">
+$(function(){
+	$('#add_time_from').date();
+	$('#add_time_to').date();
+});
+</script>
+<div class="deposit margin10">
+	<div class="recordlist"> 
+		<!--{if $records.list}-->
+		<div class="notice-word">
+			<p>您资金账户余额变动的所有财务明细</p>
+		</div>
+		<!--{/if}-->
+		<div class="title clearfix">
+			<form method="get" class="mr10">
+				<input type="hidden" name="app" value="deposit" />
+				<input type="hidden" name="act" value="recordlist" />
+				<input class="text mt10" type="text" name="add_time_from" id="add_time_from" value="{$smarty.get.add_time_from}" />
+				<span class="split pt10">-</span>
+				<input class="text mt10" id="add_time_to" type="text" name="add_time_to" value="{$smarty.get.add_time_to}" />
+				<input type="submit" class="btn-alipay mt10" style="width:120px;" value="{$lang.search}" />
+			</form>
+			<div class=" mt10"> 
+            	<span class="mr20">
+                	总收入 <strong class="price">{$records.total_income}</strong> 元，
+               	 	总支出 <strong class="price">{$records.total_outlay}</strong> 元 
+                </span>
+                <span>
+                	<a href="{url app=deposit&act=monthbill}" class="inline-block pl5 pr5" style="background:#39F;color:#fff; line-height:25px;">下载月账单</a>
+                </span>
+            </div>
+		</div>
+		<!--{foreach from=$records.list item=record}-->
+		<div class="table-list mb10">
+			<ul>
+				<li class="first clearfix"> 
+                	<span class="th float-left"><em>付款日期</em></span> 
+                    <span class="td float-left"><em>{$record.add_time|date:Y.m.d H.i.s}</em></span> 
+                </li>
+				<li class="clearfix">  
+                	<span class="th float-left"><em>商户订单号|交易号</em></span>
+                    <span class="td float-left"><em>{$record.bizOrderId} | {$record.tradeNo}</em></span>
+                </li>
+				<li class="clearfix"> <span class="th float-left"><em class="two-col">类型</em></span> <span class="td float-left"><em class="two-col">{$record.tradeTypeName}</em></span> </li>
+				<li class="clearfix"> 
+                	<span class="th float-left"><em>收入(元)</em></span> 
+                    <span class="td float-left"><em><strong class="price green">{if $record.flow eq 'income'}+{$record.amount}{else}&nbsp;{/if}</strong></em></span> 
+                </li>
+				<li class="clearfix"> 
+                	<span class="th float-left"><em>支出(元)</em></span> 
+                    <span class="td float-left"><em> <strong class="price">{if $record.flow eq 'outlay'}-{$record.amount}{else}&nbsp;{/if}</strong></em></span> 
+                </li>
+				<li class="clearfix"> 
+                	<span class="th float-left"><em>余额(元)</em></span> 
+                    <span class="td float-left"><em><strong class="price">{$record.balance}</strong></em></span> 
+                </li>
+				<li class="clearfix"> 
+                	<span class="th float-left"><em>支付方式</em></span> 
+                    <span class="td float-left"><em> {$record.fundchannel}</em></span> 
+                </li>
+				<li class="clearfix"> 
+                	<span class="th float-left"><em>详情</em></span> 
+                    <span class="td float-left"><em class="detail"><a href="{url app=deposit&act=record&tradeNo=$record.tradeNo}">查看</a></em></span> 
+                </li>
+			</ul>
+		</div>
+		<!--{foreachelse}-->
+		<div class="notice-word">
+			<p class="yellow">{$lang.no_record}</p>
+		</div>
+		<!--{/foreach}--> 
+	</div>
+	<div id="datePlugin"></div>
+</div>
+{include file=page.bottom.html}
+{include file=footer.html} 

@@ -1,0 +1,103 @@
+{include file=header.html}
+<script type="text/javascript">
+$(function(){
+	$('.attr-tabs .user-menu li').click(function(){
+		var entype=$(this).attr('entype');
+		$(this).addClass('active').siblings().removeClass('active');
+		$('.tab-c').hide();
+		$('.'+entype).show();
+	})
+});
+</script>
+<div id="page-goods-index">
+    {include file=curlocal.html} {include file=groupbuyinfo.html}
+    <div class="w-shop clearfix">
+        <div class="col-sub w210">
+            {include file=left.html}
+        </div>
+        <div style="overflow:\hidden;" class="col-main float-right w980">
+            <div class="attr-tabs">
+                <ul class="user-menu">
+                    <li class="active" entype="description">
+                        <a style="border-left:1px solid #ddd;" href="javascript:;">
+                            <span>
+                                {$lang.goods_detail}
+                            </span>
+                        </a>
+                    </li>
+                    <li entype="group-qa">
+                        <a href="javascript:;">
+                            <span>
+                                团购咨询
+                            </span>
+                        </a>
+                    </li>
+                    <li entype="logs">
+                        <a href="javascript:;">
+                            <span>
+                                {$lang.group_log}
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="option_box tab-c description">
+                <div class="default">
+                    {$goods.description|escape:editor}
+                </div>
+            </div>
+            <div class="group-qa tab-c hidden">
+            	{include file =qa.html}
+            </div>
+            <div class="logs tab-c mb10 pt10 hidden">
+                <div class="list">
+                    <table>
+                        <!--{if $join_list}-->
+                        <tr>
+                            <th>
+                                用户名
+                            </th>
+                            <th>
+                                商品规格
+                            </th>
+                            <th>
+                                购买数量
+                            </th>
+                            <th>
+                                参团时间
+                            </th>
+                        </tr>
+                        <!-- {foreach from=$join_list item=user} -->
+                        <tr>
+                            <td>
+                                {$user.user_name}
+                            </td>
+                            <td>
+                                <!--{foreach from=$user.spec_quantity item=spec name=fe_spec}-->
+                                {$spec.spec}
+                                <br />
+                                <!-- {/foreach} -->
+                            </td>
+                            <td>
+                                {$user.quantity}
+                            </td>
+                            <td>
+                                {$user.add_time|date:complete}
+                            </td>
+                        </tr>
+                        <!-- {/foreach} -->
+                        <!--{else}-->
+                        <tr>
+                            <td colspan="4">
+                                {$lang.no_groupbuy_log}
+                            </td>
+                        </tr>
+                        <!-- {/if} -->
+                    </table>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file=footer.html}

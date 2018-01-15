@@ -1,0 +1,70 @@
+{include file=member.header.html} 
+<script>
+function gs_callback(id, codeType, code)
+{
+	$('input[name="codeType"]').val(codeType);
+	$('input[name="code"]').val(code);
+	DialogManager.close(id);
+	$('#deposit-config').submit();
+}
+</script>
+<div class="deposit margin10">
+	<div class="deposit-config">
+		<div class="notice-word">
+			<p>您的账户名一旦设置后，将不允许修改，请填写正确的信息</p>
+		</div>
+		<form method="post" id="deposit-config">
+			<div class="form">
+				<dl class="clearfix">
+					<dt>&nbsp;</dt>
+					<dd>
+						<input type="text"  placeholder="账号名为电邮地址" name="account" class="input-s1" value="{$deposit_account.account}" {if $deposit_account} readonly="readonly"{/if} />
+					</dd>
+					<dd class="gray"></dd>
+				</dl>
+				<dl class="clearfix">
+					<dt>&nbsp;</dt>
+					<dd>
+						<input placeholder="真实姓名" type="text" name="real_name" class="input-s1" value="{$deposit_account.real_name}" />
+					</dd>
+					<dd class="gray"></dd>
+				</dl>
+				<dl class="clearfix">
+					<dt>&nbsp;</dt>
+					<dd>
+						<input placeholder="设置支付密码" type="password" name="password" class="input-s1" />
+					</dd>
+					<dd class="gray"></dd>
+				</dl>
+				<dl class="clearfix">
+					<dt>&nbsp;</dt>
+					<dd>
+						<input placeholder="确认您的支付密码" type="password" name="password_confirm" class="input-s1" />
+					</dd>
+					<dd class="gray"></dd>
+				</dl>
+				<dl class="mt10 clearfix">
+					<dt class="mb10">开启余额支付</dt>
+					<dd class="rebuildWrap">
+						<label class="rebuildInput">
+							<input type="radio" name="pay_status" {if $deposit_account.pay_status eq 'ON' || !$deposit_account} checked="checked" {/if}value="ON" />
+							{$lang.yes}</label>
+						<label class="rebuildInput" >
+							<input type="radio" name="pay_status" {if $deposit_account.pay_status eq 'OFF'} checked="checked"{/if} value="OFF" />
+							{$lang.no}</label>
+					</dd>
+					<dd class="gray mt10">通过此开关，可以设置您的账户余额资金是否可以用于支付，以保护您的资金安全</dd>
+				</dl>
+				<dl class="clearfix">
+					<dt>&nbsp;</dt>
+					<dd>
+						<input type="hidden" name="codeType" value="" />
+						<input type="hidden" name="code" value="" />
+						<input type="button" class="btn-alipay" value="{$lang.submit}"  gs_id="deposit_captcha" gs_name="deposit_captcha" gs_callback="gs_callback" gs_title="{$lang.captcha}" gs_width="300"  gs_type="captcha" ectype="gselector" gs_opacity="0.05" gs_class="simple-blue" id="deposit-captcha" />
+					</dd>
+				</dl>
+			</div>
+		</form>
+	</div>
+</div>
+{include file=footer.html} 

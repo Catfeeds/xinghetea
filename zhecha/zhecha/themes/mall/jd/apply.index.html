@@ -1,0 +1,62 @@
+{include file="top.html"}
+<style type="text/css">
+.w{ width:990px;}
+</style>
+<div id="main" class="w-full">
+	<div class="page-apply">
+		<div class="w logo mt10">
+			<p><a href="{$site_url}" title="{$site_title}"><img alt="{$site_title}" src="{$site_logo}" /></a></p>
+		</div>
+		<div class="w content clearfix">
+			<div class="left">
+				<div class="title">
+					<h3>商家入驻申请</h3>
+				</div>
+				<ul class="list">
+					<li class="current"><i></i>入驻流程</li>
+					<li><i></i>签订入驻协议</li>
+					<li><i></i>填写商家信息</li>
+					<li><i></i>平台审核</li>
+					<li><i></i>店铺开通</li>
+				</ul>
+				<div class="title">
+					<h3>平台联系方式</h3>
+				</div>
+				<ul class="call">
+					<li><span>电话：</span>400-8888888</li>
+					<li><span>手机：</span>15888888888</li>
+					<li><span>邮箱：</span>psmoban@psmb.com</li>
+				</ul>
+			</div>
+			<div class="right">
+				<div class="title"> 入驻流程 </div>
+				<div class="joinin-i">
+					<span><i class="a"></i>签订入驻协议</span>
+					<i class="arrow"></i>
+					<span><i class="b"></i>填写商家信息</span>
+					<i class="arrow"></i>
+					<span><i class="c"></i>平台审核</span>
+					<i class="arrow"></i>
+					<span><i class="d"></i>店铺开通</span>
+				</div>
+				<div class="title"> 入驻指南 </div>
+				<div class="joinin-info">
+					<ul class="nav J_tab">
+						<!--{foreach from=$articles item=article name=fe_article}-->
+						<li {if $smarty.foreach.fe_article.first}class="on"{/if} {if $smarty.foreach.fe_article.last} style="border:0;"{/if}>{$article.title|escape}</li>
+						<!--{/foreach}-->
+					</ul>
+					<ul class="tab-content">
+						<!--{foreach from=$articles item=article name=fe_article}-->
+						<li {if !$smarty.foreach.fe_article.first} class="hidden"{/if}>{$article.content}</li>
+						<!--{/foreach}-->
+					</ul>
+              </div>
+			  <div class="joinin-btn">
+			  		<a href="{url index.php?app=apply&step=1}" target="_self">我要入驻</a>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
+{include file=footer.html}

@@ -1,0 +1,39 @@
+{include file="header.html"}
+<div id="rightTop">
+    <p>{$lang.store_setting}</p>
+    <ul class="subnav">
+        <li><a class="btn1" href="index.php?app=store_setting&amp;act=vip_price">{$lang.vip_price}</a></li>
+        <li><a class="btn1" href="index.php?app=store_setting&amp;act=pv_setting">{$lang.pv_setting}</a></li>
+        <li><span>{$lang.add_goods}</span></li>
+        </ul>
+</div>
+
+<div class="info">
+	<form method="post" enctype="multipart/form-data">
+		<table class="infoTable">
+			<tr>
+				<th class="paddingT15">{$lang.add_goods_allow}:</th>
+				<td class="paddingT15"><span class="onoff"> <label
+						id="add_goods_allow"
+						class="cb-enable {if $add_goods.status eq 1}selected{/if}">{$lang.allow}</label>
+						<label id="add_goods_unallow" class="cb-disable {if $add_goods.status eq 0}selected{/if}">{$lang.unallow}</label>
+						<input name="add_goods_allow" value="1"
+						type="radio"{if $add_goods.status eq 1}checked{/if}> <input
+						 name="add_goods_allow" value="0"
+						type="radio"{if $add_goods.status eq 0}checked{/if}>
+				</span> <span class="grey notice"></span></td>
+			</tr>
+
+			</div>
+
+			<tr>
+				<th></th>
+				<td class="ptb20"><input class="formbtn J_FormSubmit"
+					type="submit" name="Submit" value="{$lang.submit}" /> 
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+
+{include file="footer.html"}

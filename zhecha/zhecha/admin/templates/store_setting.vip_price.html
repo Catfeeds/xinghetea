@@ -1,0 +1,102 @@
+{include file="header.html"}
+<div id="rightTop">
+    <p>{$lang.store_setting}</p>
+    <ul class="subnav">
+        <li><span>{$lang.vip_price}</span></li>
+        <li><a class="btn1" href="index.php?app=store_setting&amp;act=pv_setting">{$lang.pv_setting}</a></li>
+        <li><a class="btn1" href="index.php?app=store_setting&amp;act=add_goods">{$lang.add_goods}</a></li>
+        
+        </ul>
+</div>
+
+<div class="info">
+	<form method="post" enctype="multipart/form-data">
+		<table class="infoTable">
+			<tr>
+				<th class="paddingT15">{$lang.status}:</th>
+				<td class="paddingT15"><span class="onoff"> <label
+						id="vip_price_allow"
+						class="cb-enable {if $vip_price_setting.status eq 1}selected{/if}">{$lang.enable}</label>
+						<label id="vip_price_unallow" class="cb-disable {if $vip_price_setting.status eq 0}selected{/if}">{$lang.disable}</label>
+						<input name="vip_price_allow" value="1"
+						type="radio"{if $vip_price_setting.status eq 1}checked{/if}> <input
+						name="vip_price_allow" value="0"
+						type="radio"{if $vip_price_setting.status eq 0}checked{/if}>
+				</span> <span class="grey notice"></span></td>
+			</tr>
+			
+			<tr id="vip_price_1" style="{if $vip_price_setting.status eq 0}display:none;{/if}">
+				<th class="paddingT15"><label for="price_format">
+						{$lang.price_1}:</label></th>
+				<td class="paddingT15 wordSpacing5">
+				<input  id="price_1" type="text"
+					name="price_1" value="{$vip_price_setting.price.price_1}" />
+					<label class="field_notice">{$lang.vip_price_notice}</label>
+				</td>
+			</tr>
+			<tr id="vip_price_2" style="{if $vip_price_setting.status eq 0}display:none;{/if}">
+				<th class="paddingT15"><label for="price_format">
+						{$lang.price_2}:</label></th>
+				<td class="paddingT15 wordSpacing5"><input
+					 id="price_2" type="text"
+					name="price_2" value="{$vip_price_setting.price.price_2}" />
+					<label class="field_notice">{$lang.vip_price_notice}</label></td>
+			</tr>
+			<tr id="vip_price_3" style="{if $vip_price_setting.status eq 0}display:none;{/if}">
+				<th class="paddingT15"><label for="price_format">
+						{$lang.price_3}:</label></th>
+				<td class="paddingT15 wordSpacing5"><input
+					 id="price_3" type="text"
+					name="price_3" value="{$vip_price_setting.price.price_3}" />
+					<label class="field_notice">{$lang.vip_price_notice}</label></td>
+			</tr>
+			<tr id="vip_price_4" style="{if $vip_price_setting.status eq 0}display:none;{/if}">
+				<th class="paddingT15"><label for="price_format">
+						{$lang.price_4}:</label></th>
+				<td class="paddingT15 wordSpacing5"><input
+					 id="price_4" type="text"
+					name="price_4" value="{$vip_price_setting.price.price_4}" />
+					<label class="field_notice">{$lang.vip_price_notice}</label></td>
+			</tr>
+			<tr id="vip_price_5" style="{if $vip_price_setting.status eq 0}display:none;{/if}">
+				<th class="paddingT15"><label for="price_format">
+						{$lang.price_5}:</label></th>
+				<td class="paddingT15 wordSpacing5"><input
+					 id="price_5" type="text"
+					name="price_5" value="{$vip_price_setting.price.price_5}" />
+					<label class="field_notice">{$lang.vip_price_notice}</label></td>
+			</tr>
+			</div>
+
+			<tr>
+				<th></th>
+				<td class="ptb20"><input class="formbtn J_FormSubmit"
+					type="submit" name="Submit" value="{$lang.submit}" /> <input
+					class="formbtn" type="reset" name="Submit2" value="{$lang.reset}" />
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+<script type="text/javascript">
+	$(function() {
+		$('#vip_price_allow').click(function() {
+			$('#vip_price_1').show();
+			$('#vip_price_2').show();
+			$('#vip_price_3').show();
+			$('#vip_price_4').show();
+			$('#vip_price_5').show();
+		});
+		$('#vip_price_unallow').click(function() {
+			$('#vip_price_1').hide();
+			$('#vip_price_2').hide();
+			$('#vip_price_3').hide();
+			$('#vip_price_4').hide();
+			$('#vip_price_5').hide();
+		});
+
+		
+
+	});
+</script>
+{include file="footer.html"}

@@ -1,0 +1,150 @@
+﻿<script type="text/javascript">
+$(function(){
+	
+	$('.J_UseCouponSelect').change(function(){
+		if($(this).val()=='') couponPrice = 0;
+		else {
+			couponPrice = number_format(parseFloat($(this).find('option:selected').attr('price')),2);
+		}
+		$(this).parent().parent().find('.J_CouponPrice').html(couponPrice);
+		fill_order_amount();
+	});
+	
+	$('.J_IconRemark').hover(function(){
+		$(this).children().css('display','inline-block');
+	}, function(){
+		$(this).children().hide();
+	});
+	
+	$('.J_Postscript').click(function(){
+		$(this).addClass('max-textarea');
+	});
+	$('.J_Postscript').blur(function(){
+		$(this).removeClass('max-textarea');
+	});
+
+});	
+
+</script>
+
+<div class="cartbox mt20">
+  <div class="content"> 
+    <!--{foreach from=$goods_info.orderList item=order key=store_id}-->
+    <div class="store-each J_Store" store_id="{$store_id}">
+      <div class="store-name clearfix mb10"> <span class="col-desc"> <a href="{url app=store&id=$order.store_id}"><ins class="psmb-icon-font fs18 mr5">&#xe676;</ins>{$order.store_name|escape}</a> 
+        <!--{if $order.im_qq}--> 
+        <a href="http://wpa.qq.com/msgrd?v=3&uin={$order.im_qq|escape}&site={$order.store_name|escape}&menu=yes" target="_blank"><img align="absmiddle" src="http://wpa.qq.com/pa?p=1:{$order.im_qq|escape}:4" alt="qq"></a> 
+        <!--{/if}--> 
+        </span>
+      </div>
+      <div class="order-goods">
+      <!--{foreach from=$order.items item=goods name=fe_goods}-->
+      <dl class="goods-each clearfix" {if !$smarty.foreach.fe_goods.first} style="border-top:0;"{/if}>
+        <dd class="pic"><a class="block" href="{url app=goods&id=$goods.goods_id&store_id=$store_id}" target="_blank"><img src="{$goods.goods_image}" alt="{$goods.goods_name|escape}" width="48" height="48" /></a></dd>
+        <dd class="desc">
+          <p><a href="{url app=goods&id=$goods.goods_id&store_id=$store_id}" target="_blank">{$goods.goods_name|escape}</a></p>
+          <p class="f66">{$goods.specification|escape}</p>
+        </dd>
+	
+        <dd class="price">{$goods.price|price}+{$goods.max_exchange}积分 <span class="quantity">x{$goods.quantity}</span></dd>
+      	<dd class="hidden subtotal fs14 J_Subtotal-{$store_id}" price="{$goods.subtotal}" exchange="{$goods.subtotal_exchange}">{$goods.subtotal|price}+{$goods.subtotal_exchange}积分</dd>
+	  </dl>
+      <!-- {/foreach} --> 
+      </div>
+      <!--{if $order.growbuy_list}-->
+      <div class="order-growbuy"> 
+        <!--{foreach from=$order.growbuy_list item=growbuy name=fe_growbuy}-->
+        <div class="growbuy-each">
+          <p class="padding5" style=" background:#ddd;">
+            <label class="subtit" for="growbuy-{$store_id}_{$growbuy.psid}">
+              <input class="J_GrowBuy J_GrowBuy-{$store_id}" price="{$growbuy.money}" type="checkbox" name="growbuy[{$store_id}][]" id="growbuy-{$store_id}_{$growbuy.psid}" value="{$growbuy.psid}" />
+              {sprintf lang=orderForGrowbuy var1=growbuy.money} </label>
+          </p>
+          <!--{foreach from=$growbuy.items item=goods name=fe_goods}-->
+          <dl class="goods-each clearfix" {if !$smarty.foreach.fe_goods.first} style="border-top:0;"{/if}>
+            <dd class="pic"><a class="block" href="{url app=goods&id=$goods.goods_id&store_id=$store_id}" target="_blank"><img src="{$goods.default_image}" alt="{$goods.goods_name|escape}" width="48" height="48" /></a></dd>
+            <dd class="desc">
+              <p><a href="{url app=goods&id=$goods.goods_id&store_id=$store_id}" target="_blank">{$goods.goods_name|escape}</a></p>
+            </dd>
+            <dd class="price">{$goods.price|price}<span class="quantity">x{$goods.quantity|default:1}</span></dd>
+
+          </dl>
+          <!--{/foreach}--> 
+        </div>
+        <!--{/foreach}--> 
+      </div>
+      <!--{/if}--> 
+      
+      <!--{if $order.fullgift}-->
+      <div class="order-fullgift">
+        <p class="padding5" style=" background:#ddd;">
+          <label class="subtit" for="fullgift-{$store_id}_{$order.fullgift.psid}">
+            <input type="checkbox" name="fullgift" id="fullgift-{$store_id}_{$order.fullgift.psid}" value="{$order.fullgift.psid}" checked="checked" disabled="disabled" />
+            {sprintf lang=orderForFullgift var1=order.fullgift.rules.amount} </label>
+        </p>
+        <!--{foreach from=$order.fullgift.rules.items item=goods name=fe_goods}-->
+        <dl class="goods-each clearfix" {if !$smarty.foreach.fe_goods.first} style="border-top:0;"{/if}>
+          <dd class="pic"><a class="block" href="{url app=gift&id=$goods.goods_id}" target="_blank"><img src="{$goods.default_image}" alt="{$goods.goods_name|escape}" width="48" height="48" /></a></dd>
+          <dd class="desc">
+            <p><a href="{url app=gift&id=$goods.goods_id}" target="_blank">{$goods.goods_name|escape}</a></p>
+          </dd>
+          <dd class="price">{$goods.price|price} <span class="quantity">x{$goods.quantity|default:1}</span></dd>
+        </dl>
+        <!-- {/foreach} --> 
+      </div>
+      <!--{/if}-->
+      <div class="order-confirm-extra clearfix">
+        <div  class="postscript clearfix">
+          <div class="hidden">{$lang.postscript}{$lang.colon}</div>
+          <div class="subcontent">
+            <textarea class="f66 J_Postscript" name="postscript[{$store_id}]" placeholder="{$lang.postscript_desc}"></textarea>
+          </div>
+        </div>
+        <div class="confirm-extra-info">
+          <div class="extra-list ship-method clearfix">
+            <div class="subtitle float-left">{$lang.delivery_method}{$lang.colon}</div>
+            <div class="subcontent float-left">
+              <select name="delivery_type[{$store_id}]" class="J_LogistFeesSelect J_LogistFeesSelect-{$store_id}">
+                <!--{foreach from=$shipping_methods.$store_id item=logist key=key name=fe_logist}-->
+                <option value="{$key}" price="{$logist.logist_fees}">{$logist.name}{$lang.colon}{$logist.logist_fees|default:0.00}</option>
+                <!--{/foreach}-->
+              </select>
+            </div>
+            <div class="fee float-right f66">+<em class="J_LogistFees-{$store_id}">{$logist.logist_fees}</em></div>
+          </div>
+          <div class="extra-list use-coupon clearfix" style="display:none">
+            <div class="subtitle float-left">{$lang.use_coupon}{$lang.colon}</div>
+            <div class="subcontent float-left">
+              <select class="J_UseCouponSelect J_UseCouponSelect-{$store_id}" name="coupon_sn[{$store_id}]" {if !$order.coupon_list} disabled="disabled"{/if}>
+                <option value="">{$lang.pls_coupon}</option>
+                <!--{foreach from=$order.coupon_list item=coupon}-->
+                <option value="{$coupon.coupon_sn}" price="{$coupon.coupon_value}">SN:{$coupon.coupon_sn}</option>
+                <!--{/foreach}-->
+              </select>
+            </div>
+            <div class="fee float-right f66">-<em class="J_CouponPrice J_CouponPrice-{$store_id}">0.00</em></div>
+          </div>
+          
+          <!--{if $order.mealprefer}-->
+          <div class="extra-list use-mealprefer clearfix">
+            <div class="subtitle float-left">{$lang.meal}{$lang.colon}</div>
+            <div class="subcontent float-left"> <span>{$order.mealprefer.text}</span> </div>
+            <div class="fee float-right f66">-<em class="J_MealPreferPrice J_MealPreferPrice-{$store_id}">{$order.mealprefer.price}</em></div>
+          </div>
+          <!--{/if}--> 
+          
+          <!--{if $order.fullprefer}-->
+          <div class="extra-list use-fullprefer clearfix">
+            <div class="subtitle float-left">{$lang.fullprefer}{$lang.colon}</div>
+            <div class="subcontent float-left"> <span>{$order.fullprefer.text}</span> </div>
+            <div class="fee float-right f66">-<em class="J_FullPreferPrice J_FullPreferPrice-{$store_id}">{$order.fullprefer.price}</em></div>
+          </div>
+          <!--{/if}--> 
+          
+        </div>
+        <div class="confirm-extra-bottom clearfix mt10"> <span class="price fs14 store-amount-fields">{$lang.store_order_amount}{$lang.colon}&nbsp;&nbsp; <i class="float-right">&yen;<em class="J_OrderAmount-{$store_id}" style="font-size:16px">{$order.amount}+{$order.amount_exchange}积分</em></i> </span> </div>
+      </div>
+    </div>
+    <!-- {/foreach} --> 
+  </div>
+</div>

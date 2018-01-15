@@ -1,0 +1,27 @@
+{include file=header.html}
+<div id="rightTop">
+  <p>{$lang.eidt_theme}</p>
+  <ul class="subnav">
+    <li><a class="btn1" href="{url app=theme}">{$lang.pc_theme}</a></li>
+    <li><a class="btn1" href="{url app=theme&type=mobile}">{$lang.mobile_theme}</a></li>
+    <li><span>{$lang.eidt_theme}</span></li>
+  </ul>
+</div>
+<ul id="rightCon">
+    <div class="model-theme">
+        <!--{foreach from=$form_data item=form key=key}-->
+        <a class="box" href="index.php?app=theme&amp;act=edit&model={$key}&style={$smarty.get.style}&template={$smarty.get.template}&type={$smarty.get.type}">
+            <div class="wrap-box">
+                <h3>
+                    {$form.text}
+                </h3>
+                <p>
+                    {$form.desc}
+                </p>
+            </div>
+        </a>
+        <!--{/foreach}-->
+        <div class="clear"></div>
+    </div>
+</ul>
+{include file=footer.html}

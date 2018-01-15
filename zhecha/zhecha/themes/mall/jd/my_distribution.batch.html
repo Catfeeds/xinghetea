@@ -1,0 +1,44 @@
+{include file=member.header.html}
+<div class="content">
+  <div class="totline"></div>
+  <div class="botline"></div>
+  {include file=member.menu.html}
+  <div id="right"> 
+	{include file=member.curlocal.html}
+	{include file=member.submenu.html}
+    <div class="wrap">
+        <div class="public">
+            <div class="information">
+                <form method="post" enctype="multipart/form-data">
+                	<input type="hidden" name="id" value="{$smarty.get.id}" />
+                	<div class="setup info shop">
+                        <table style="width: 100%">
+                             <tr>
+                                  <th width="60">{$lang.distribution_1}{$lang.colon}</th>
+                                  <td><input type="text" name="distribution_1" class="text width_short"  value="{$store.distribution_1}" /> % <span class="padding1">{$lang.distribution_note}</span></td>
+                            </tr>
+                            <tr>
+                                  <th>{$lang.distribution_2}{$lang.colon}</th>
+                                  <td><input type="text" name="distribution_2" class="text width_short"  value="{$store.distribution_2}" /> % <span class="padding1">{$lang.distribution_note}</span></td>
+                            </tr>
+                            <tr>
+                                  <th>{$lang.distribution_3}{$lang.colon}</th>
+                                  <td><input type="text" name="distribution_3" class="text width_short"  value="{$store.distribution_3}" /> % <span class="padding1">{$lang.distribution_note}</span></td>
+                            </tr>
+                         </table>
+                         <div class="issuance" style="text-align:left; margin-left:80px; margin-top:20px;"><input type="submit" class="btn" value="{$lang.submit}" /></div>
+                    	</div>
+                </form>
+            </div>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+        <div class="adorn_right1"></div>
+        <div class="adorn_right2"></div>
+        <div class="adorn_right3"></div>
+        <div class="adorn_right4"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+{include file=footer.html}

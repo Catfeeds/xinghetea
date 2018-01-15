@@ -1,0 +1,57 @@
+{include file=header.html}
+<script type="text/javascript">
+$(function(){
+	$('.detail-info img').attr('style','width:100%; height:100%;');
+	$('.menus-tab > *').click(function(){
+		var index = $(this).index();
+		$(this).addClass('active').siblings().removeClass('active');
+		$('#page-goods .content').children().eq(index).show().siblings().hide();
+	})
+})
+</script>
+<div id="page-goods" class="page-goods" style="padding-bottom:36px;"> 
+	{include file=groupbuyinfo.html}
+    <ul class="menus-tab clearfix" >
+    	<li class="active"><a href="javascript:;">{$lang.goods_detail}</a></li>        
+        <li><a href="javascript:;">团购咨询</a></li>
+        <li><a href="javascript:;">参团记录</a></li>
+    </ul>
+    <div class="content">
+    	<div class="detail-info pt10 pb10 clearfix"> {$goods.description|escape:editor} </div>
+        <div class="cm hidden pb20">{include file=qa.html}</div>
+        <div class="group-log hidden pb20">
+        	<ul>
+                        <!--{if $join_list}-->
+                        <li class="webkit-box">
+                            <span class="flex1">
+                                用户名
+                            </span>
+                            <span class="flex1">
+                                商品规格
+                            </span>
+                            <span class="flex1">
+                                购买数量
+                            </span>
+                        </li>
+                        <!-- {foreach from=$join_list item=user} -->
+                        <li  class="webkit-box fs12 f99">
+                            <span class="flex1">
+                                {$user.user_name}
+                            </span>
+                            <span class="flex1 overflow-ellipsis">
+                                <!--{foreach from=$user.spec_quantity item=spec name=fe_spec}-->
+                                {$spec.spec}&nbsp;
+                                <!-- {/foreach} -->
+                            </span>
+                            <span class="flex1">
+                                {$user.quantity}
+                            </span>
+                        </li>
+                        <!-- {/foreach} -->
+                        <!--{else}-->
+                        <div class="list padding10">{$lang.no_groupbuy_log}</div>
+                        <!-- {/if} -->
+                    </ul>
+        </div>
+    </div>    
+</div>

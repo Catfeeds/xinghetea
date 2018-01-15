@@ -1,0 +1,54 @@
+{include file=member.header.html}
+<div class="deposit margin10">
+	<div class="deposit-withdraw-confirm">
+		<div class="notice-word">
+			<p>向平台商提交提现申请，审核通过之后，平台将向您提交的银行卡汇款，请确保您的银行卡信息正确</p>
+		</div>
+		<form class="J_AjaxForm" method="post" id="deposit-withdraw-confirm">
+			<div class="title"> 确认提现信息 </div>
+			<div class="form">
+				<div class="confirm-info">
+					<dl class="clearfix">
+						<dt class="mb10">银行卡信息：</dt>
+						<dd> {$bank.account_name} {$bank.bank_name}({$bank.num}) </dd>
+					</dl>
+					<dl class="clearfix">
+						<dt>提现金额：</dt>
+						<dd> <span class="money">{$widthdraw.total}</span> 元 
+							<!--{if $widthdraw.fee}--> <span class="gray">（服务费：{$widthdraw.fee|price}，实际到账：{$widthdraw.money|price}）</span><!--{/if}--> 
+						</dd>
+					</dl>
+					<div class="btn-metro"><a class="goback" href="{url app=deposit&amp;act=withdraw}">返回修改</a></div>
+				</div>
+				<!--{if $widthdraw.total gt $deposit_account.money}-->
+				<div class="notice-word draw-notice-word">
+					<p class="yellow">对不起！您的提现金额 <em class="price">{$widthdraw.total}</em> 大于您目前的账户余额<em class="price">{$deposit_account.money}</em>，请您减少提现金额。</p>
+				</div>
+				<!--{/if}-->
+				<div class="confirm-form padding10">
+					<dl class="clearfix">
+						<dt>&nbsp;</dt>
+						<dd>
+							<input placeholder="支付密码" type="password" name="password" class="J_AjaxFormFields input-s1" value="" />
+						</dd>
+					</dl>
+					<dl class="clearfix">
+						<dt>&nbsp;</dt>
+						<dd class="captcha">
+							<input placeholder="{$lang.captcha}" type="text" name="captcha" class="J_AjaxFormFields input-s1 input-s1-w1" id="captcha1" />
+							<a href="javascript:change_captcha($('#captcha'));" class="renewedly"><img id="captcha" src="{$real_site_url}/index.php?app=captcha&amp;{$random_number}" /></a> </dd>
+					</dl>
+					<dl class="clearfix">
+						<dt>&nbsp;</dt>
+						<dd class="submit">
+							<input type="hidden" name="bid" class="J_AjaxFormFields" value="{$bank.bid}" />
+							<input type="hidden" name="ret_url" class="J_AjaxFormSuccessRet J_AjaxFormFields" value="{url app=deposit}" />
+							<input type="submit" class="J_AjaxFormSubmit btn-alipay" value="确认提现" {if $widthdraw.total gt $deposit_account.money} disabled="disabled" {/if}/>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+{include file=footer.html} 

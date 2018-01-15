@@ -1,0 +1,161 @@
+<div {if !$smarty.get.act}style="border-top:2px solid #999999;"{/if} class="statistics clearfix">
+    <div class="rate">
+        <p>
+            <strong>
+                {$statistics.goods_rate|default:0}
+            </strong>
+            <span>
+                %
+            </span>
+            <i>
+                好评
+            </i>
+        </p>
+        <em>
+            总共{$statistics.total_count}人参加评分
+        </em>
+    </div>
+    <div class="per-evaluation">
+        <dl class="clearfix">
+            <dt>
+                好评
+                <em>
+                    ({$statistics.goods_rate|default:0}%)
+                </em>
+            </dt>
+            <dd>
+                <b style="width:{$statistics.goods_rate|default:0}%;">
+                </b>
+            </dd>
+        </dl>
+        <dl class="clearfix">
+            <dt>
+                中评
+                <em>
+                    ({$statistics.middle_rate|default:0}%)
+                </em>
+            </dt>
+            <dd>
+                <b style="width:{$statistics.middle_rate|default:0}%;">
+                </b>
+            </dd>
+        </dl>
+        <dl class="clearfix">
+            <dt>
+                差评
+                <em>
+                    ({$statistics.bad_rate|default:0}%)
+                </em>
+            </dt>
+            <dd>
+                <b style="width:{$statistics.bad_rate|default:0}%;">
+                </b>
+            </dd>
+        </dl>
+    </div>
+    <div class="i-want-comment">
+        <span>
+            您可对已购商品进行评价
+        </span>
+        <p class="mt5">
+            <a href="{url app=buyer_order}">
+                我要评价
+            </a>
+        </p>
+    </div>
+</div>
+<div class="attr-tabs">
+    <ul class="user-menu">
+        <li {if $smarty.get.eval eq ''}class="active" {/if}>
+            <a style="border-left:1px solid #ddd;" href="{url app=goods&act=comments&id=$goods.goods_id}#module">
+                <span>
+                    全部评价（{$statistics.total_count}）
+                </span>
+            </a>
+        </li>
+        <li {if $smarty.get.eval eq 3}class="active" {/if}>
+            <a href="{url app=goods&act=comments&id=$goods.goods_id&eval=3}#module">
+                <span>
+                    好评（{$statistics.goods_count}）
+                </span>
+            </a>
+        </li>
+        <li {if $smarty.get.eval eq 2}class="active" {/if}>
+            <a href="{url app=goods&act=comments&id=$goods.goods_id&eval=2}#module">
+                <span>
+                    中评（{$statistics.middle_count}）
+                </span>
+            </a>
+        </li>
+        <li {if $smarty.get.eval eq 1}class="active" {/if}>
+            <a href="{url app=goods&act=comments&id=$goods.goods_id&eval=1}#module">
+                <span>
+                    差评（{$statistics.bad_count}）
+                </span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="eval-list">
+    <!-- {foreach from=$goods_comments item=comment name=fe_comment} -->
+    <script type="text/javascript">
+        $(function() {
+            $('#comment_evaluation_{$smarty.foreach.fe_comment.iteration}').raty({
+                readOnly: true,
+                score: '{$comment.goods_evaluation}'
+            });
+        })
+    </script>
+    <div class="list mt10">
+        <div class="user_avatar">
+            <a href="{url app=message&act=send&to_id=$comment.buyer_id}" target="_blank"
+            title="给他（她）发站内信？">
+                <img src="{$comment.portrait}" />
+            </a>
+        </div>
+        <dl class="comment-detail">
+            <dt class="clearfix">
+                <a href="{url app=message&act=send&to_id=$comment.buyer_id}" target="_blank"
+                title="给他（她）发站内信？" class="name">
+                    {$comment.buyer_name}
+                </a>
+                <i>
+                    {$comment.evaluation_time|date:complete}
+                </i>
+            </dt>
+            <dd>
+                <span>
+                    用户评分：
+                </span>
+                <span id="comment_evaluation_{$smarty.foreach.fe_comment.iteration}">
+                </span>
+            </dd>
+            <dd>
+                <span>
+                    评价详情：
+                </span>
+                <span class="content">
+                    {$comment.comment|escape|nl2br}
+                </span>
+            </dd>
+            <!--{if $comment.reply_content}-->
+            <dd class="reply w-full clearfix">
+                <span>
+                    商家回复：
+                </span>
+                <span class="content">
+                    {$comment.reply_content|escape}
+                </span>
+            </dd>
+            <!--{/if}-->
+        </dl>
+    </div>
+    <!-- {foreachelse} -->
+    <div class="no-access">
+        {$lang.no_records}
+    </div>
+    <!-- {/foreach} -->
+</div>
+{if $goods_comments}{include file=page.bottom.html}{/if}
+
+

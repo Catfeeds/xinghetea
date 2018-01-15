@@ -1,0 +1,63 @@
+{include file="header.html"}
+<div id="rightTop">
+	<p>{$lang.balance_account}</p>
+	<ul class="subnav">
+    	<li><a class="btn1" href="index.php?app=daily_summary">{$lang.daily_summary}</a></li>
+    	<li><span>消费对账</span></li>
+    	
+    </ul>
+</div>
+<div id="flexigrid"></div>
+<script type="text/javascript">
+$(function(){
+	var data_url = 'index.php?app=balance_account&act=get_xml';
+    $("#flexigrid").flexigrid({
+    	url: data_url,
+    	colModel : [
+			{display: '订单总金额', name : 'order_amount', width : 100, sortable : true, align: 'center'},
+			{display: '订单总积分', name : 'order_integral', width : 100, sortable : true, align: 'center'},
+			{display: '电子币支付', name : 'deposit_pay', width : 100, sortable : true, align: 'center'},
+			{display: '现金支付', name : 'cash_pay', width : 100, sortable : true, align: 'center'},
+			{display: '积分支付', name : 'integral_pay', width : 100, sortable : true, align: 'center'},
+			{display: '状态', name : 'status', width : 100, sortable : true, align: 'center'},
+			{display: '日期', name : 'date', width : 200, sortable : true, align: 'center'},
+
+    		],
+        buttons : [
+			{display: '<i class="fa fa-file-excel-o"></i>导出数据', name : 'csv', bclass : 'csv', title : '将选定行数据导出CVS文件', onpress : fg_operate }
+        ],
+		searchitems : [
+			{display: '日期', name : 'date'}           
+        ],
+    	sortname: "date",
+    	sortorder: "desc",
+    	title: '消费对账'
+    });
+});
+function fg_operate(name, bDiv) {
+	var itemlist = new Array();
+	$('.trSelected',bDiv).each(function(){
+		itemlist.push($(this).attr('data-id'));
+	});
+	if (name == 'del') {
+	   if($('.trSelected',bDiv).length==0){
+		   parent.layer.alert('没有选择操作项',{icon: 0});
+			return false;
+	   }
+       fg_delete(itemlist,'integral');
+	}
+	if(name == 'csv'){
+		if($('.trSelected',bDiv).length==0){
+		   parent.layer.confirm('您确定要下载全部数据吗？',{icon: 3, title:'提示'},function(index){
+				fg_csv(itemlist);
+				parent.layer.close(index);
+			},function(index){
+				parent.layer.close(index);
+			});
+	   }else{
+		   fg_csv(itemlist);
+	   }
+	}
+}
+</script>
+{include file="footer.html"} 

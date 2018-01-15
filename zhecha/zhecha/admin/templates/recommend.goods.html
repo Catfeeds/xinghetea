@@ -1,0 +1,81 @@
+{include file="header.html"}
+<div id="rightTop">
+  <p>{$lang.goods_recommended}</p>
+  <ul class="subnav">
+    <li><a class="btn1" href="index.php?app=recommend">{$lang.recommend}</a></li>
+    <li><span>推荐商品</span></li>
+  </ul>
+</div>
+<div id="flexigrid"></div>
+<script type="text/javascript">
+var id = '{$smarty.get.id}';
+$(function(){
+    $("#flexigrid").flexigrid({
+    	url: 'index.php?app=recommend&act=get_xml_goods&id='+id,
+    	colModel : [
+    		{display: '操作', name : 'operation', width : 100, sortable : false, align: 'center', className: 'handle'},
+			{display: '排序', name : 'sort_order', width: 50, sortable : true, align : 'center'},
+			{display: '推荐类型', name : 'recom_name', width: 100, sortable : true, align : 'center'},
+			{display: '商品名称', name : 'goods_name', width : 250, sortable : true, align: 'center'},
+			{display: '价格', name : 'price', width : 50, sortable : true, align: 'center'},
+    		{display: '店铺名称', name : 'store_name', width : 100, sortable : true, align: 'center'},
+			{display: '品牌', name : 'brand', width : 100, sortable : true, align: 'center'},
+    		{display: '所属分类', name : 'cate_name', width : 250, sortable : true, align: 'center'},    		
+			{display: '上架', name : 'if_show', width: 50, sortable : true, align : 'center'},
+			{display: '禁售', name : 'closed', width: 50, sortable : true, align : 'center'},  
+			{display: '浏览数', name : 'views', width: 50, sortable : true, align : 'center'} 		
+    		],
+        buttons : [
+            {display: '<i class="fa fa-ban"></i>批量取消推荐', name : 'cancel_recommend', bclass : 'del', title : '将选定行数据批量取消推荐', onpress : fg_operate }
+        ],
+		searchitems : [
+			{display: '推荐类型', name : 'recom_name'}
+        ],
+    	sortname: "sort_order",
+    	sortorder: "asc",
+    	title: '推荐商品列表'
+    });
+});
+function fg_operate(name, bDiv) {
+	if($('.trSelected',bDiv).length>0){
+        var itemlist = new Array();
+		$('.trSelected',bDiv).each(function(){
+			itemlist.push($(this).attr('data-id'));
+		});
+		if(name == 'cancel_recommend'){
+			cancel_recommend(itemlist,id);
+		}
+    } else {
+		parent.layer.alert('没有选择操作项',{icon: 0});
+        return false;
+    }
+}
+
+function cancel_recommend(itemlist,id)
+{
+	if (typeof itemlist == 'number') {
+    	var itemlist = new Array(itemlist.toString());
+	};
+	var url = 'index.php?app=recommend&act=drop_goods_from';
+	parent.layer.confirm('确认将这 ' + itemlist.length + ' 个商品取消推荐吗？',{icon: 3, title:'提示'},function(index){
+		itemlist = itemlist.join(',');
+		$.ajax({
+			type: "GET",
+			dataType: "json",
+			url: url,
+			data: "id="+id+"&goods_id="+itemlist,
+			success: function(data){
+				if (data.done){
+					$("#flexigrid").flexReload();
+				} else {
+					parent.layer.alert(data.msg);
+				}
+			},
+		});
+		parent.layer.close(index);
+	},function(index){
+		parent.layer.close(index);
+	});
+}
+</script>
+{include file="footer.html"} 

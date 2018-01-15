@@ -1,0 +1,111 @@
+{include file="top.html"} 
+<script type="text/javascript">
+$(function(){
+    $('#login_form').validate({
+        errorPlacement: function(error, element){
+           var error_td = element.parent('dd');
+            error_td.find('label').hide();
+			error_td.find('i').hide();
+            error_td.append(error);
+        },
+        success       : function(label){
+            label.siblings('i').show().addClass('ok');
+            label.remove();
+        },
+        onkeyup : false,
+        rules : {
+            user_name : {
+                required : true
+            },
+            password : {
+                required : true
+            },
+            captcha : {
+                required : true,
+                remote   : {
+                    url : 'index.php?app=captcha&act=check_captcha',
+                    type: 'get',
+                    data:{
+                        captcha : function(){
+                            return $('#captcha1').val();
+                        }
+                    }
+                }
+            }
+        },
+        messages : {
+            user_name : {
+                required : '{$lang.user_name_required}'
+            },
+            password  : {
+                required : '{$lang.password_required}'
+            },
+            captcha : {
+                required : '{$lang.captcha_required}',
+                remote   : '{$lang.captcha_error}'
+            }
+        }
+    });
+	$('input[name="user_name"], input[name="password"], input[name="captcha"]').click(function(){
+		$(this).parent().find('label').hide();
+	});
+});
+</script>
+<style>
+.w{width:1000px;}
+</style>
+<div id="main" class="w-full">
+	<div id="page-login" class="w page-auth mt20 mb20">
+		<div class="w logo mb10"> <a href="{$site_url}" title="{$site_title}"><img alt="{$site_title}" src="{$site_logo}" /></a> </div>
+		<div class="w clearfix">
+			<div class="col-main">
+				<div class="login-edit-field" area="login_left" widget_type="area"> 
+					<!--{widgets page=login area=login_left}--> 
+				</div>
+			</div>
+			<div class="col-sub">
+				<div class="form">
+					<div class="title">{$lang.user_login} </div>
+					<div class="content">
+						<form method="post" id="login_form">
+							<dl class="clearfix">
+								<dt>{$lang.user_name}</dt>
+								<dd>
+									<input class="input" type="text" name="user_name"  id="user_name" title="{$lang.user_name_tip}"/>
+									<i class="i-name"></i>
+								</dd>
+							</dl>
+							<dl class="clearfix">
+								<dt>{$lang.password}</dt>
+								<dd>
+									<input class="input" type="password" name="password"  id="password" title="{$lang.password_tip}" />
+									<i class="i-psw"></i>
+								</dd>
+							</dl>
+							
+							<!--{if $captcha}-->
+							<dl class="clearfix">
+								<dt>{$lang.captcha}</dt>
+								<dd class="captcha clearfix">
+									<input type="text" class="input float-left" name="captcha" id="captcha1" title="{$lang.captcha_tip}"/>
+									 <a href="javascript:change_captcha($('#captcha'));" class="float-left"><img height="26" id="captcha" src="index.php?app=captcha&amp;{$random_number}" class="float-left" /></a>
+								</dd>
+							</dl>
+							<!--{/if}-->
+							<dl class="clearfix">
+								<dt>&nbsp;</dt>
+								<dd class="clearfix">
+									<input type="submit" class="login-submit" name="Submit" value="{$lang.login}" title="{$lang.login}" />
+									<input type="hidden" name="ret_url" value="{$ret_url}" />
+								</dd>
+							</dl>
+							
+							
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{include file="footer.html"}

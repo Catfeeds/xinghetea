@@ -1,0 +1,43 @@
+{include file=dcenter.header.html}
+<div id="page-member">
+  <div class="main dcenter">
+    <div class="header">
+      <div class="mark-text">我的收益（元） <a class="more-link" style="margin: 0" href="{url app=dcenter&act=profit}">查看全部</a></div>
+      <div class="amount-box clearfix"> <span class="amount">{$statistics.amount|default:0}</span> <a href="mobile/index.php?app=deposit&amp;act=withdraw">提现</a></div>
+    </div>
+    <ul class="clearfix level-box">
+      <li><a href="{url app=dcenter&act=profit&layer=1}" target="_self">
+        <div class="gray fs14">一级佣金</div>
+        <div class="fs16 ff66">{$statistics.layer1|price}</div>
+        </a> </li>
+      <li><a href="{url app=dcenter&act=profit&layer=2}" target="_self">
+        <div class="gray fs14">二级佣金</div>
+        <div class="fs16 ffc0">{$statistics.layer2|price}</div>
+        </a></li>
+      <li><a href="{url app=dcenter&act=profit&layer=3}" target="_self">
+        <div class="gray fs14">三级佣金</div>
+        <div class="fs16 f69c">{$statistics.layer3|price}</div>
+        </a></li>
+    </ul>
+    <ul>
+      <!--{if $orders}--> 
+      <!--{foreach from=$orders item=order}-->
+      <li>
+        <div class="earn-info clearfix" style="height:20px;">
+          <div class="float-left"> <span class="earn-date">{$order.add_time|date:complete}</span> <span class="earn-id" style="margin-left:5px;"> {if $order.layer eq 1}一{elseif $order.layer eq 2}二{else}三{/if}级订单：{$order.order_sn}</span> </div>
+          <div class="float-right">
+            <p class="price">+{$order.item_profit|price}</p>
+          </div>
+        </div>
+      </li>
+      <!--{/foreach}-->
+      <div class="pageinfo pt10">{include file=page.bottom.html}</div>
+      <!--{else}-->
+      <div class="list-empty"> <i class="psmb-icon-font">&#xe6e5;</i>
+        <p>亲，您暂无{if $smarty.get.layer eq 1}一级{elseif $smarty.get.layer eq 2}二级{elseif $smarty.get.layer eq 3}三级{else}{/if}分销佣金！</p>
+      </div>
+      <!--{/if}-->
+    </ul>
+  </div>
+</div>
+{include file=footer.html}

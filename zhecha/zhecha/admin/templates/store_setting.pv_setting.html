@@ -1,0 +1,63 @@
+{include file="header.html"}
+<div id="rightTop">
+    <p>{$lang.store_setting}</p>
+    <ul class="subnav">
+        <li><a class="btn1" href="index.php?app=store_setting&amp;act=vip_price">{$lang.vip_price}</a></li>
+        <li><span>{$lang.pv_setting}</span></li>
+        <li><a class="btn1" href="index.php?app=store_setting&amp;act=add_goods">{$lang.add_goods}</a></li>
+        </ul>
+</div>
+
+<div class="info">
+	<form method="post" enctype="multipart/form-data">
+		<table class="infoTable">
+			<tr>
+				<th class="paddingT15">{$lang.status}:</th>
+				<td class="paddingT15"><span class="onoff"> <label
+						id="pv_setting_allow"
+						class="cb-enable {if $pv_setting.status eq 1}selected{/if}">{$lang.enable}</label>
+						<label id="pv_setting_unallow" class="cb-disable {if $pv_setting.status eq 0}selected{/if}">{$lang.disable}</label>
+						<input name="pv_setting_allow" value="1"
+						type="radio"{if $pv_setting.status eq 1}checked{/if}> <input
+						 name="pv_setting_allow" value="0"
+						type="radio"{if $pv_setting.status eq 0}checked{/if}>
+				</span> <span class="grey notice"></span></td>
+			</tr>
+			
+			<tr id="pv_view" style="{if $pv_setting.status eq 0}display:none;{/if}">
+				<th class="paddingT15"><label for="price_format">
+						{$lang.pv_view}:</label></th>
+				<td class="paddingT15 wordSpacing5">
+				<input  id="pv_view" type="text"
+					name="pv_view" value="{$pv_setting.pv_view}" />
+					<label class="field_notice">{$lang.pv_setting_notice}</label>
+				</td>
+			</tr>
+			</div>
+
+			<tr>
+				<th></th>
+				<td class="ptb20"><input class="formbtn J_FormSubmit"
+					type="submit" name="Submit" value="{$lang.submit}" /> <input
+					class="formbtn" type="reset" name="Submit2" value="{$lang.reset}" />
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+<script type="text/javascript">
+	$(function() {
+		$('#pv_setting_allow').click(function() {
+			$('#pv_view').show();
+
+		});
+		$('#pv_setting_unallow').click(function() {
+			$('#pv_view').hide();
+
+		});
+
+		
+
+	});
+</script>
+{include file="footer.html"}

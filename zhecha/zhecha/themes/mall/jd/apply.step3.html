@@ -1,0 +1,53 @@
+{include file="top.html"}
+<style type="text/css">
+.w{ width:990px;}
+</style>
+<div id="main" class="w-full">
+	<div class="page-apply">
+		<div class="w logo mt10">
+			<p><a href="{$site_url}" title="{$site_title}"><img alt="{$site_title}" src="{$site_logo}" /></a></p>
+		</div>
+		<div class="w content clearfix">
+			<div class="left">
+				<div class="title">
+					<h3>商家入驻申请</h3>
+				</div>
+				<ul class="list">
+					<li><i></i>入驻流程</li>
+					<li><i></i>签订入驻协议</li>
+					<li><i></i>提交申请</li>
+					<li class="current"><i></i>平台审核</li>
+					<li><i></i>店铺开通</li>
+				</ul>
+				<div class="title">
+					<h3>平台联系方式</h3>
+				</div>
+				<ul class="call">
+					<li><span>电话：</span>400-8888888</li>
+					<li><span>手机：</span>15888888888</li>
+					<li><span>邮箱：</span>psmoban@psmb.com</li>
+				</ul>
+			</div>
+			<div class="right">
+				<div class="joinin-step">
+				  <ul>
+					<li class="first current"><span>签订入驻协议</span></li>
+					<li class="current"><span>填写商家信息</span></li>
+					<li class="current"><span>平台审核</span></li>
+					<li class="last"><span>店铺开通</span></li>
+				  </ul>
+				</div>
+				<div class="apply-status">
+				    <p><i></i>
+					<!--{if $store.apply_remark}-->
+					审核不通过，原因为：<a href="{url app=apply&step=2&id=$store.store_id}">{$store.apply_remark}</a>
+					<!--{else}-->
+					{$lang.user_has_application}
+					<!--{/if}-->
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{include file=footer.html}

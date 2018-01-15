@@ -1,0 +1,73 @@
+{include file=member.header.html} 
+<script type="text/javascript">
+$(function(){
+	$('#add_time_from').date();
+	$('#add_time_to').date();
+});
+</script>
+<div id="datePlugin"></div>
+<div class="margin10 deposit">
+	<div class="recordlist"> 
+		<!--{if $records.list}-->
+		<div class="notice-word">
+			<p>冻结资金明细</p>
+		</div>
+		<!--{/if}-->
+		<div class="title clearfix">
+			<form method="get" class="float-left">
+				<input type="hidden" name="app" value="deposit" />
+				<input type="hidden" name="act" value="frozenlist" />
+				<input class="text mt10" type="text" name="add_time_from" id="add_time_from" value="{$smarty.get.add_time_from}" />
+				<span class="split pt10">-</span>
+				<input class="text mt10" id="add_time_to" type="text" name="add_time_to" value="{$smarty.get.add_time_to}" />
+				<input type="submit" class="btn-alipay mt10" style="width:120px;" value="{$lang.search}" />
+			</form>
+			<div class="float-left mt10"> 总冻结金额 <strong class="price">{$records.total_outlay}</strong> 元 </div>
+			<div class="float-right"> </div>
+		</div>
+		<!--{foreach from=$records.list item=record}-->
+		<div class="table-list mb10">
+			<ul>
+				<li class="first clearfix"> 
+                	<span class="th float-left"><em>创建日期</em></span> <span class="td float-left"><em>{if $record.flow eq 'income'}{$record.end_time|date:Y.m.d H.i.s}{else}{$record.pay_time|date:Y.m.d H.i.s}{/if}</em></span> </li>
+				<li class="clearfix"> <span class="th float-left"><em>商户订单号|交易号</em></span> <span class="td float-left"><em>{$record.bizOrderId} | {$record.tradeNo}</em></span> </li>
+				<li class="clearfix"> 
+                	<span class="th float-left"><em class="two-col">名称|备注</em></span> 
+                    <span class="td float-left"><em class="two-col">{$record.title|truncate:30}</em></span> 
+                 </li>
+                 <li class="clearfix"> 
+                	<span class="th float-left"><em class="two-col">对方</em></span> 
+                    <span class="td float-left"><em class="two-col">{$record.partyInfo.name}</em></span> 
+                 </li>
+				<li class="clearfix"> 
+                	<span class="th float-left"><em>金额(元)</em></span> 
+                    <span class="td float-left">
+                    	<em>
+                    		<strong class="price"> 
+                  				<!--{if $record.flow eq 'income'}--> 
+                  				<span class="green">+{$record.amount}</span> 
+                  				<!--{else}--> 
+                  				<span>-{$record.amount}</span> 
+                  				<!--{/if}--> 
+                  			</strong> 
+                          </em>
+                    </span>
+                </li>
+				<li class="clearfix"> 
+                	<span class="th float-left"><em>状态</em></span> 
+                    <span class="td float-left">
+                    	<em class="{if in_array($record.status, array('CLOSED')) || in_array($record.refund.status, array('CLOSED'))}gray{/if}">{$record.status_label}</em>
+                   	</span> 
+                </li>
+				<li class="clearfix"> <span class="th float-left"><em>详情</em></span> <span class="td float-left"><em class="detail"><a  href="{url app=deposit&act=record&tradeNo=$record.tradeNo}">查看</a></em></span> </li>
+			</ul>
+		</div>
+		<!--{foreachelse}-->
+		<div class="notice-word mt10">
+			<p>{$lang.no_records}</p>
+		</div>
+		<!--{/foreach}--> 
+	</div>
+</div>
+<div class="mt10 clearfix">{include file=page.bottom.html}</div>
+{include file=footer.html} 

@@ -1,0 +1,29 @@
+{include file="header.html"}
+<div id="main" class="w-full">
+	<div id="page-search-limitbuy" class="w mt10 mb20">
+		{include file=curlocal.html}
+		<div class="w mt10">
+			<div class="search-type clearfix">
+				<div class="float-left btn-type">
+					<a href="javascript:;" class="current">{$lang.limitbuy_list}</a>
+				</div>
+				{include file=page.top.html}                              
+			</div>
+			<div class="group-list mt10 mb10 clearfix">
+          		<ul class="clearfix">
+                 	<!-- {foreach from=$goods_list item=goods name=fe_goods} -->
+                 	<li class="item mb20" {if $smarty.foreach.fe_goods.iteration % 4 eq 0} style="margin-right:0"{/if}>
+                 		<div class="desc"><a target="_blank" href="{url app=goods&id=$goods.goods_id}">{$goods.goods_name|escape|truncate:60}</a></div>
+                 		<div class="pic"><a target="_blank" href="{url app=goods&id=$goods.goods_id}"><img src="{$goods.default_image}" height="200" alt="{$goods.goods_name|escape}" /></a></div>
+                    	<div class="buy"><span class="price">{$goods.pro_price|price}</span><del>{$goods.price}</del><a href="{url app=goods&id=$goods.goods_id}"></a></div>
+                 	</li>
+                 	<!--{foreachelse}-->
+                 	<div>{$lang.no_limitbuy_goods}</div>
+                 	<!-- {/foreach} -->
+              	</ul>
+				{include file=page.bottom.html}
+       		</div>    
+  		</div>
+	</div>
+</div>
+{include file="footer.html"}

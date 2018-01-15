@@ -1,0 +1,17 @@
+{include file="header.html"}
+<div id="mycart" class="auto">
+   <div class="order-form cashier succeed clearfix mt10">
+		<div class="order_info">
+   			<div class="ico {if $payInfo.payment_code neq 'cod' && in_array($payInfo.status, array('PENDING', 'CLOSED'))}defeated{/if}"></div>
+            <div class="text">
+				<h4>{$payInfo.status_label}</h4>
+				<div class="btn">
+                	<!--{foreach from=$payInfo.Links item=item name=fe_item}-->
+                	<a href="{$item.link}">{$item.text}</a> <!--{if !$smarty.foreach.fe_item.last}-->|<!--{/if}-->
+                    <!--{/foreach}-->
+                </div>
+            </div>
+        </div>
+   </div>
+</div>
+{include file="footer.html"}

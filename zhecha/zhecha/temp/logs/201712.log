@@ -1,0 +1,31 @@
+Fri, 01 Dec 2017 09:23:07 +0800	[256]MySQL Error[1064]: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+MySQL Query:select * from ecm_collect where item_id=86 and store_id=
+Wrong File:  D:\phpStudyMoreVersion\WWW\zhecha\eccore\model\mysql.php[589]	\eccore\model\mysql.php	286
+Fri, 01 Dec 2017 13:24:27 +0800	[2]array_merge(): Argument #2 is not an array	\mobile\app\order.app.php	358
+Fri, 01 Dec 2017 13:30:08 +0800	[2]array_merge(): Argument #2 is not an array	\mobile\app\order.app.php	358
+Fri, 01 Dec 2017 13:32:40 +0800	[2]array_merge(): Argument #2 is not an array	\mobile\app\order.app.php	358
+Fri, 01 Dec 2017 16:40:17 +0800	[2]fsockopen(): unable to connect to :25 (����Ŀ����������ܾ����޷����ӡ�
+)	\includes\libraries\class.smtp.php	89
+Mon, 04 Dec 2017 15:05:38 +0800	[2]fsockopen(): unable to connect to :25 (����Ŀ����������ܾ����޷����ӡ�
+)	\includes\libraries\class.smtp.php	89
+Tue, 05 Dec 2017 14:11:26 +0800	[2]Division by zero	\includes\order.base.php	596
+Tue, 05 Dec 2017 14:19:02 +0800	[2]Division by zero	\includes\order.base.php	596
+Tue, 05 Dec 2017 14:19:33 +0800	[2]Division by zero	\includes\order.base.php	596
+Tue, 05 Dec 2017 14:27:19 +0800	[2]fsockopen(): unable to connect to :25 (����Ŀ����������ܾ����޷����ӡ�
+)	\includes\libraries\class.smtp.php	89
+Thu, 07 Dec 2017 15:14:54 +0800	[256]MySQL Error[1054]: Unknown column 'date' in 'where clause'
+MySQL Query:SELECT *,balance_account.id FROM ecm_balance_account balance_account WHERE date='2017-12-06'
+Wrong File:  D:\phpStudyMoreVersion\WWW\zhecha\eccore\model\mysql.php[534]	\eccore\model\mysql.php	286
+Thu, 07 Dec 2017 15:28:03 +0800	[256]MySQL Error[1054]: Unknown column 'status1' in 'where clause'
+MySQL Query:SELECT *,order_alias.order_id FROM ecm_order order_alias WHERE status1 >= 20 and pay_time >= 1512576000 and pay_time <1512489600
+Wrong File:  D:\phpStudyMoreVersion\WWW\zhecha\eccore\model\mysql.php[534]	\eccore\model\mysql.php	286
+Thu, 07 Dec 2017 16:15:13 +0800	[256]MySQL Error[1054]: Unknown column 'date' in 'order clause'
+MySQL Query:SELECT *,balance_account.id FROM ecm_balance_account balance_account WHERE 1 = 1 ORDER BY date desc LIMIT 0,10
+Wrong File:  D:\phpStudyMoreVersion\WWW\zhecha\eccore\model\mysql.php[534]	\eccore\model\mysql.php	286
+Thu, 07 Dec 2017 16:15:26 +0800	[256]MySQL Error[1054]: Unknown column 'date' in 'order clause'
+MySQL Query:SELECT *,balance_account.id FROM ecm_balance_account balance_account WHERE 1 = 1 ORDER BY date desc LIMIT 0,10
+Wrong File:  D:\phpStudyMoreVersion\WWW\zhecha\eccore\model\mysql.php[534]	\eccore\model\mysql.php	286
+Fri, 08 Dec 2017 09:17:04 +0800	[256]MySQL Error[1054]: Unknown column 'pro.stor1e_id' in 'where clause'
+MySQL Query:SELECT COUNT(*) as c FROM ecm_limitbuy pro LEFT JOIN ecm_goods g ON pro.goods_id = g.goods_id WHERE pro.stor1e_id=2
+Wrong File:  D:\phpStudyMoreVersion\WWW\zhecha\eccore\model\mysql.php[458]	\eccore\model\mysql.php	286
+Fri, 08 Dec 2017 09:21:39 +0800	[2]Invalid argument supplied for foreach()	\app\seller_limitbuy.app.php	389

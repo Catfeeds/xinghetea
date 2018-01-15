@@ -1,0 +1,76 @@
+{include file=dcenter.header.html}
+<script type="text/javascript">
+$(function(){
+	$(".js-earn-info").click(function(){
+		$(this).parent().find(".order-detail").slideToggle('slow');
+		$(this).parent().toggleClass('on');
+	});
+	var type = '{$smarty.get.type}';
+	$(".JOrderTab").each(function(index, element) {
+        if($(this).attr("data-status") == type){
+			$(this).addClass("on").siblings("li").removeClass('on');
+		}
+    });
+})
+</script>
+<div id="page-member">
+  <div class="main dcenter">
+        <div  class="top-tab">
+          <ul class="clearfix">
+            <li class="JOrderTab on" data-status=""><a href="{url app=dcenter&act=order}">所有订单</a></li>
+            <li class="JOrderTab" data-status="accepted"><a href="{url app=dcenter&act=order&type=accepted}">已付款</a></li>
+            <li class="JOrderTab" data-status="pending"><a href="{url app=dcenter&act=order&type=pending}">待付款</a></li>
+            <li class="JOrderTab" data-status="finished"><a href="{url app=dcenter&act=order&type=finished}">已完成</a></li>
+          </ul>
+        </div>
+        <div class="count-text">共找到 <span>{$statistics.total.count|default:0}</span> 笔订单，预计分销总收入 <span>{$statistics.total.amount|price}</span> 
+            <p>一级 <span>{$statistics.layer1.count|default:0}</span> 笔，二级 <span>{$statistics.layer2.count|default:0}</span> 笔，三级 <span>{$statistics.layer3.count|default:0}</span> 笔。</p>
+        </div>
+        <div class="earn-list">
+          <ul class="js-order-cate">
+            <!--{if $orders}--> 
+            <!--{foreach from=$orders item=order}-->
+            <li class="panel">
+              <div class="earn-info clearfix js-earn-info" style="padding-right:40px;">
+                <div class="float-left">
+                  <div class="earn-date">{$order.add_time|date:complete}</div>
+                  <div class="earn-id"> {if $order.layer eq 1}一{elseif $order.layer eq 2}二{else}三{/if}级订单：{$order.order_sn}</div>
+                </div>
+                <div class="float-right">
+                  <p class="price">+{$order.item_profit|price}</p>
+                  <div class="status red">{if $order.status eq 'refund_success'}<b style="color:green; font-weight:normal;">买家已退款</b>{else}{$order.status|modifier:order_status}{/if}</div>
+                </div>
+              </div>
+              <div class="order-detail hidden">
+              	<div class="address">
+                  <div><span>分销商：</span>{$order.dtb_name|escape}（{$order.dtb_phone_mob}）</div>
+                  <div><span>买家会员：</span>{$order.buyer_name}</div>
+                  <div><span>收货人：</span>{$order.consignee|escape}（{$order.phone_mob}）</div>
+                  <div><span>收货地址：</span>{$order.region_name} {$order.address}</div>
+                </div>
+                <dl class="goods-list">
+                  <!--{foreach from=$order.order_goods item=goods}-->
+                  <dd class="clearfix"> 
+                  	<a href="{url app=goods&id=$goods.goods_id}">
+                        <div class="goods-image"><img src="{$goods.goods_image}" alt="{$goods.goods_name|escape}"></div>
+                        <div class="goods-name">商品名称：{$goods.goods_name} </div>
+                        <div class="goods-name"><span class="goods-price gray fs12">价格：{$goods.price|price}  数量：{$goods.quantity}</span></div>
+                    </a> 
+                   </dd>
+                    <!--{/foreach}-->
+                </dl>
+                
+              </div>
+            </li>
+            <!--{/foreach}--> 
+            <div class="pageinfo pt10">{include file=page.bottom.html}</div>
+            <!--{else}-->
+            <div class="list-empty"> <i class="psmb-icon-font">&#xe6e5;</i>
+              <p>亲，您暂无分销订单信息！</p>
+            </div>
+            <!--{/if}-->
+          </ul>
+        </div>
+  </div>
+</div>
+{include file=footer.html}

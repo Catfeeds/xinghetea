@@ -1,0 +1,30 @@
+<div id="footer">
+	<!--{if $smarty.get.app neq 'goods'}-->
+	<div class="float-back-top" onclick="window.scroll(0,0);"></div>
+    <!--{else}-->
+    <div class="float-cart"><a href="{url app=cart}"></a></div>
+    <!--{/if}-->
+	<div class="gap"></div>
+	<!--{if $smarty.get.app neq 'goods'}-->
+	<div class="float-layer">
+		<div class="global-nav global-nav-current">
+			<div class="global-nav__nav-wrap"> 
+                <div class="global-nav__nav-item"> <a href="{$real_site_url}" class="global-nav__nav-link"><i class="psmb-icon-font global-nav__icon-index">&#xe6b8;</i> <span class="global-nav__nav-tit">商城首页</span></a> </div>
+                <!--{if $store.isMyDistributionStore}-->
+				<div class="global-nav__nav-item"> <a href="{url app=dcenter}" class="global-nav__nav-link"><i class="psmb-icon-font global-nav__icon-category">&#xe6cc;</i> <span class="global-nav__nav-tit">分销中心</span></a> </div>
+                <!--{elseif $store.canJoinInStore}-->
+                <div class="global-nav__nav-item"> <a href="{url app=apply&act=distribution}" class="global-nav__nav-link"><i class="psmb-icon-font global-nav__icon-category">&#xe6ca;</i> <span class="global-nav__nav-tit">我要分销</span></a> </div>
+                <!--{else}-->
+				<div class="global-nav__nav-item"> <a href="{url app=category}" class="global-nav__nav-link"><i class="psmb-icon-font global-nav__icon-category">&#xe67c;</i> <span class="global-nav__nav-tit">分类</span></a> </div>
+                <!--{/if}-->
+				<div class="global-nav__nav-item"> <a href="{url app=store&act=search&id=$store.store_id}" class="global-nav__nav-link"><i class="psmb-icon-font global-nav__icon-search">&#xe65c;</i> <span class="global-nav__nav-tit">搜索</span></a> </div>
+				<div class="global-nav__nav-item"> <a href="{url app=cart}" class="global-nav__nav-link"><i class="psmb-icon-font global-nav__icon-shop-cart">&#xe6af;</i> <span class="global-nav__nav-tit">购物车</span> <span class="global-nav__nav-shop-cart-num" id="carId">{$cart_goods_kinds}</span></a> </div>
+				<div class="global-nav__nav-item"> <a href="{url app=member}" class="global-nav__nav-link"><i class="psmb-icon-font global-nav__icon-my-yhd">&#xe686;</i> <span class="global-nav__nav-tit">用户中心</span></a> </div>
+			</div>
+			<div class="global-nav__operate-wrap"> <span class="global-nav__operate-cart-num" id="globalId">{$cart_goods_kinds}</span> </div>
+		</div>
+	</div>
+	<!--{/if}--> 
+    {$statistics_code}
+</div>
+</body></html>

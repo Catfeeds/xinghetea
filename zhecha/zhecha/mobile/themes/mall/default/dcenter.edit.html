@@ -1,0 +1,23 @@
+{include file=dcenter.header.html}
+<div id="main" class="pb20 dcenter mt10">
+	<div id="page-auth" class="page-login">
+		<form class="editform" method="POST" enctype="multipart/form-data">
+			<dl class="form pb20">
+				<dd>
+                	<label>店铺名称：</label>
+					<input type="text" id="real_name" name="real_name" class="J_AjaxFormFields input" value="{$distribution.real_name|escape}"/>
+				</dd>
+				<dd>
+                	<label>店主电话：</label>
+					<input type="text" name="phone_mob" id="phone_mob" class="J_AjaxFormFields input" value="{$distribution.phone_mob}"/>
+				</dd>
+				<dd>
+                	<label>店铺Logo：<br /><font style="font-size:12px; color:gray">(100px*100px)</font></label>
+                    <p class="logo" ><img width="100" height="100" src="{if $distribution.logo}{$distribution.logo}{else}data/system/default_store_logo.gif{/if}" /><input type="file" name="logo" size="1" hidefocus="true" maxlength="0"/><span class="text">修改LOGO</span></p>				
+				</dd>
+					<input type="submit" class="btn-alipay" value="保存修改" />
+			</dl>
+		</form>
+	</div>
+</div>
+{include file=footer.html}

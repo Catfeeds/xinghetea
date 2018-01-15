@@ -1,0 +1,13 @@
+Mon, 25 Sep 2017 05:06:12 +0000	[2]date_default_timezone_get(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone.	\eccore\model\mysql.php	162
+Mon, 25 Sep 2017 13:08:18 +0800	[2]Illegal string offset 'res'	\admin\app\license.app.php	100
+Mon, 25 Sep 2017 13:08:55 +0800	[2]Illegal string offset 'res'	\admin\app\license.app.php	100
+Mon, 25 Sep 2017 15:28:48 +0800	[2]Illegal string offset 'res'	\admin\app\license.app.php	100
+Fri, 29 Sep 2017 16:50:49 +0800	[2]extract() expects parameter 1 to be array, null given	\mobile\app\weixinconnect.app.php	102
+Fri, 29 Sep 2017 17:18:31 +0800	[2]extract() expects parameter 1 to be array, null given	\mobile\app\weixinconnect.app.php	102
+Sat, 30 Sep 2017 06:30:59 +0800	[2]extract() expects parameter 1 to be array, null given	\mobile\app\weixinconnect.app.php	102
+Sat, 30 Sep 2017 06:31:09 +0800	[2]extract() expects parameter 1 to be array, null given	\mobile\app\weixinconnect.app.php	102
+Sat, 30 Sep 2017 06:31:13 +0800	[2]extract() expects parameter 1 to be array, null given	\mobile\app\qqconnect.app.php	114
+Sat, 30 Sep 2017 06:31:23 +0800	[2]extract() expects parameter 1 to be array, null given	\mobile\app\qqconnect.app.php	114
+Sat, 30 Sep 2017 09:31:16 +0800	[2]extract() expects parameter 1 to be array, null given	\app\weixinconnect.app.php	102
+Sat, 30 Sep 2017 09:31:30 +0800	[2]extract() expects parameter 1 to be array, null given	\app\qqconnect.app.php	114
+Sat, 30 Sep 2017 15:43:25 +0800	[2]extract() expects parameter 1 to be array, null given	\mobile\app\weixinconnect.app.php	102

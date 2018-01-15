@@ -1,0 +1,54 @@
+{include file=header.html}
+<script type="text/javascript">
+$(function(){
+	$.each($('.countdown'),function(){
+		var theDaysBox  = $(this).find('.NumDays');
+		var theHoursBox = $(this).find('.NumHours');
+		var theMinsBox  = $(this).find('.NumMins');
+		var theSecsBox  = $(this).find('.NumSeconds');	
+		countdown(theDaysBox, theHoursBox, theMinsBox, theSecsBox)
+	});
+});
+</script>
+<div id="page-store-index">
+	{include file=curlocal.html}
+	<div class="w-shop clearfix">
+        <div class="col-sub w210">
+        	{include file=left.html}	
+        </div>
+        <div class="col-main float-right w980">
+        	<div class="all-groupbuy goods-list-shop mb10 border">
+            	<div class="title clearfix border-b">
+                	<h3 class="float-left">团购列表</h3>
+                </div>
+                <ul class="content w-full clearfix">
+                	<!--{if $groupbuy_list}-->
+                    <!--{foreach from=$groupbuy_list item=groupbuy}-->
+                    <li style="height:280px;overflow:hidden;" class="float-left">
+                    	<dl>
+                            <dt class="border"><a href="{url app=groupbuy&id=$groupbuy.group_id}" target="_blank"><img src="{$groupbuy.default_image}"  /></a></dt>
+                            <dd class="desc mt10"><a href="{url app=groupbuy&id=$groupbuy.group_id}" target="_blank">{$groupbuy.group_name|escape|truncate:50}</a></dd>
+                             <dd class="price mt10"><del>{$groupbuy.original_price|price}</del>{$groupbuy.price|price}</dd>
+                             <!--{if $groupbuy.left_time}-->
+                            <dd class="countdown mt10">
+                                <span class="time NumDays" >{$groupbuy.left_time.d}</span><em>天</em>
+                                <span class="time NumHours">{$groupbuy.left_time.h}</span><em>小时</em>
+                                <span class="time NumMins" >{$groupbuy.left_time.m}</span><em>分</em>
+                                <span class="time NumSeconds">{$groupbuy.left_time.s}</span><em>秒</em>
+                            </dd>
+                            <!--{/if}-->
+                         </dl>
+                   </li>
+                   <!--{/foreach}-->
+                   <!--{else}-->
+                    <div class="no-goods"><p>{$lang.no_groupbuy}</p></div>
+                    <!--{/if}-->
+                </ul>
+            </div>
+            <!--{if $groupbuy_list}-->
+            {include file=page.bottom.html}
+            <!--{/if}-->
+    	</div>
+	</div>
+</div>
+{include file=footer.html}

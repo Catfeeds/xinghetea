@@ -1,0 +1,69 @@
+{include file=member.header.html} 
+<script type="text/javascript">
+$(function(){
+	$('#add_time_from').date();
+	$('#add_time_to').date();
+});
+</script>
+<div class="deposit margin10">
+	<div class="recordlist"> 
+		<!--{if $records.list}-->
+		<div class="notice-word">
+			<p>显示所有交易记录</p>
+		</div>
+		<!--{/if}-->
+		<div class="title clearfix">
+			<form method="get" class="mr10">
+				<input type="hidden" name="app" value="deposit" />
+				<input type="hidden" name="act" value="tradelist" />
+				<input class="text mt10" type="text" name="add_time_from" id="add_time_from" value="{$smarty.get.add_time_from}" />
+				<span class="split pt10">-</span>
+				<input class="text mt10" id="add_time_to" type="text" name="add_time_to" value="{$smarty.get.add_time_to}" />
+				<input type="submit" class="btn-alipay mt10" style="width:120px;" value="{$lang.search}" />
+			</form>
+		</div>
+		<!--{foreach from=$records.list item=record}-->
+		<div class="table-list mb10">
+			<ul>
+				<li class="first clearfix">
+                	<span class="th float-left"><em>创建日期</em></span> <span class="td float-left"><em>{$record.add_time|date:Y.m.d H:i:s}</em></span> 
+                </li>
+				<li class="clearfix"> 
+                	<span class="th float-left"><em>名称|备注</em></span> <span class="td float-left"><em>{$record.title|truncate:30}</em></span> 
+                </li>
+                <li class="clearfix"> 
+                	<span class="th float-left"><em>商户订单号|交易号</em></span> <span class="td float-left"><em>{$record.bizOrderId} | {$record.tradeNo}</em></span> 
+                </li>
+                
+				<li class="clearfix"> 
+                	<span class="th float-left"><em>对方</em></span> <span class="td float-left"><em>{$record.partyInfo.name}</em></span> 
+                </li>
+				<li class="clearfix"> 
+                	<span class="th float-left"><em>金额</em></span>
+                    <span class="td float-left">
+                    	<em>
+                        	{if $record.flow eq 'income'}
+                            <strong class="price green">+{$record.amount}</strong>
+                            {else}
+                            <strong class="price f60">-{$record.amount}</strong>
+                            {/if}
+                        </em>
+                    </span>
+                </li>
+				<li class="clearfix"> 
+                	<span class="th float-left"><em>状态</em></span> 
+                    <span class="td float-left"><em class="{if in_array($record.status, array('CLOSED')) || in_array($record.refund.status, array('CLOSED'))}gray {elseif !in_array($record.status, array('SUCCESS'))}f60{/if}">{$record.status_label}</em></span> 
+                </li>
+				<li class="clearfix"> <span class="th float-left"><em>查看</em></span> <span class="td float-left"><em class="detail"><a href="{url app=deposit&act=record&tradeNo=$record.tradeNo}">{$lang.detail}</a></em></span> </li>
+			</ul>
+		</div>
+		<!--{foreachelse}-->
+		<div class="notice-word">
+			<p class="yellow">{$lang.no_record}</p>
+		</div>
+		<!--{/foreach}--> 
+	</div>
+	<div id="datePlugin"></div>
+</div>
+{include file=page.bottom.html}
+{include file=footer.html} 

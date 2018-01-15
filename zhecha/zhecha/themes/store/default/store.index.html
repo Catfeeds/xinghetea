@@ -1,0 +1,143 @@
+{include file=header.html}
+<script type="text/javascript" src="{lib file=jquery.plugins/raty/jquery.raty.min.js}" charset="utf-8"></script>
+<link href="{lib file=jquery.plugins/raty/css/application.css}" rel="stylesheet" type="text/css" />
+<div id="page-store-index">
+	{include file=store.slides.html}
+	<div class="w-shop clearfix">
+        <div class="col-sub w210">
+        	{include file=left.html}	
+        </div>
+        <div class="col-main float-right w980">
+            <!--------------------------------new_goods----------------------------------------->
+        	<div class="new-goods goods-list-shop mb10 border">
+            	<div class="title clearfix border-b">
+                	<h3 class="float-left">{$lang.new_goods}</h3>
+                    <a class="float-right" href="{url app=store&act=search&id=$store.store_id&order=add_time desc}">{$lang.more_new_goods}</a>
+                </div>
+                <ul class="content  clearfix">
+                    <!--{foreach from=$new_goods item=ngoods name=fe_n}-->
+                    <script type="text/javascript">
+					$(function(){
+						$.fn.raty.defaults.path = 'static/images/';
+						$('#ng_{$smarty.foreach.fe_n.iteration}').raty({ readOnly: true, score:'{$ngoods.goods_evaluation}'});
+					})
+					</script>
+                    <li class="float-left">
+                    	<dl>
+                            <dt class="border"><a href="{url app=goods&id=$ngoods.goods_id&store_id=$store.store_id}" target="_blank"><img src="{$ngoods.default_image}"  /></a></dt>
+                            <dd class="desc mt10"><a href="{url app=goods&id=$ngoods.goods_id&store_id=$store.store_id}" target="_blank">{$ngoods.goods_name|escape|truncate:50}</a></dd>
+                            <dd class="mt10" id="ng_{$smarty.foreach.fe_n.iteration}"><span></span></dd>
+                            <dd class="price mt10 w-full clearfix"><strong>{$ngoods.price|price}</strong><em><a href="{url app=goods&id=$ngoods.goods_id&act=saleslog}#module" target="_blank">售出{$ngoods.sales}</a>&nbsp;|&nbsp;<a href="{url app=goods&id=$ngoods.goods_id&act=comments}#module" target="_blank">评论{$ngoods.comments}</a></em></dd>
+                         </dl>
+                   </li>
+                   <!--{/foreach}-->
+                </ul>
+            </div>
+            <!--------------------------------new goods_end----------------------------------------->
+            
+            
+            <!--------------------------------recommended_goods----------------------------------------->
+            <!--{if $recommended_goods}-->
+        	<div class="new-goods goods-list-shop mb10 border">
+            	<div class="title clearfix border-b">
+                	<h3 class="float-left">{$lang.recommended_goods}</h3>
+                    <!--a class="float-right" href="">{$lang.more_rec_goods}</a-->
+                </div>
+                <ul class="content  clearfix">
+                    <!--{foreach from=$recommended_goods item=rgoods name=fe_r}-->
+                    <script type="text/javascript">
+					$(function(){
+						$.fn.raty.defaults.path = 'static/images/';
+						$('#rg_{$smarty.foreach.fe_r.iteration}').raty({ readOnly: true, score:'{$rgoods.goods_evaluation}'});
+					})
+				</script>
+                    <li class="float-left">
+                    	<dl>
+                            <dt class="border"><a href="{url app=goods&id=$rgoods.goods_id&store_id=$store.store_id}" target="_blank"><img src="{$rgoods.default_image}"  /></a></dt>
+                            <dd class="desc mt10"><a href="{url app=goods&id=$rgoods.goods_id&store_id=$store.store_id}" target="_blank">{$rgoods.goods_name|escape|truncate:50}</a></dd>
+                            <dd class="mt10" id="rg_{$smarty.foreach.fe_r.iteration}"><span></span></dd>
+                            <dd class="price mt10 w-full clearfix"><strong>{$rgoods.price|price}</strong><em><a href="{url app=goods&id=$rgoods.goods_id&act=saleslog}#module" target="_blank">售出{$rgoods.sales}</a>&nbsp;|&nbsp;<a href="{url app=goods&id=$rgoods.goods_id&act=comments}#module" target="_blank">评论{$rgoods.comments}</a></em></dd>
+                         </dl>
+                   </li>
+                   <!--{/foreach}-->
+                </ul>
+            </div>
+            <!--{/if}-->
+            <!--------------------------------recommended_goods end----------------------------------------->
+            
+            <!--------------------------------hot_sale_goods----------------------------------------->
+            <!--{if $hot_sale_goods}-->
+        	<div class="new-goods goods-list-shop mb10 border">
+            	<div class="title clearfix border-b">
+                	<h3 class="float-left">{$lang.hot_sale_goods}</h3>
+                    <a class="float-right" href="{url app=store&act=search&id=$store.store_id&order=sales desc}">{$lang.more_hotsale_goods}</a>
+                </div>
+                <ul class="content  clearfix">
+                    <!--{foreach from=$hot_sale_goods item=hgoods name=fe_h}-->
+                    <script type="text/javascript">
+					$(function(){
+						$.fn.raty.defaults.path = 'static/images/';
+						$('#hg_{$smarty.foreach.fe_h.iteration}').raty({ readOnly: true, score:'{$hgoods.goods_evaluation}'});
+					})
+					</script>
+                    <li class="float-left">
+                    	<dl>
+                            <dt class="border"><a href="{url app=goods&id=$hgoods.goods_id&store_id=$store.store_id}" target="_blank"><img src="{$hgoods.default_image}"  /></a></dt>
+                            <dd class="desc mt10"><a href="{url app=goods&id=$hgoods.goods_id&store_id=$store.store_id}" target="_blank">{$hgoods.goods_name|escape|truncate:50}</a></dd>
+                            <dd class="mt10" id="hg_{$smarty.foreach.fe_h.iteration}"><span></span></dd>
+                            <dd class="price mt10 w-full clearfix"><strong>{$hgoods.price|price}</strong><em><a href="{url app=goods&id=$hgoods.goods_id&act=saleslog}#module" target="_blank">售出{$hgoods.sales}</a>&nbsp;|&nbsp;<a href="{url app=goods&id=$hgoods.goods_id&act=comments}#module" target="_blank">评论{$hgoods.comments}</a></em></dd>
+                         </dl>
+                   </li>
+                   <!--{/foreach}-->
+                </ul>
+            </div>
+            <!--{/if}-->
+            <!--------------------------------hot_sale_goods end----------------------------------------->
+            
+            
+            <!--------------------------------new_groupbuy----------------------------------------->
+            <!--{if $new_groupbuy}-->
+            <div class="new-groupbuy goods-list-shop mb10 border">
+            	<div class="title clearfix border-b">
+                	<h3 class="float-left">团购列表</h3>
+                    <a class="float-right" href="{url app=store&act=groupbuy&id=$store.store_id}">更多团购</a>
+                </div>
+                <ul class="content clearfix">
+                    <!--{foreach from=$new_groupbuy item=groupbuy name=fe_group}-->
+                    <!--{if $smarty.foreach.fe_group.iteration le 5}-->
+                    <li style="height:280px;overflow:hidden;" class="float-left">
+                    	<dl>
+                            <dt class="border"><a href="{url app=groupbuy&id=$groupbuy.group_id}" target="_blank"><img src="{$groupbuy.default_image}"  /></a></dt>
+                            <dd class="desc mt10"><a href="{url app=groupbuy&id=$groupbuy.group_id}" target="_blank">{$groupbuy.group_name|escape|truncate:50}</a></dd>
+                             <dd class="price mt10"><del>{$groupbuy.original_price|price}</del>{$groupbuy.price|price}</dd>
+                             <!--{if $groupbuy.left_time}-->
+                            <dd class="countdown mt10">
+                                <span class="time NumDays" >{$groupbuy.left_time.d}</span><em>天</em>
+                                <span class="time NumHours">{$groupbuy.left_time.h}</span><em>小时</em>
+                                <span class="time NumMins" >{$groupbuy.left_time.m}</span><em>分</em>
+                                <span class="time NumSeconds">{$groupbuy.left_time.s}</span><em>秒</em>
+                            </dd>
+                            <!--{/if}-->
+                         </dl>
+                   </li>
+                   <!--{/if}-->
+                   <!--{/foreach}-->
+                </ul>
+            </div>
+            <!--{/if}-->
+            <!--------------------------------new_groupbuy----------------------------------------->
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$.each($('.countdown'),function(){
+		var theDaysBox  = $(this).find('.NumDays');
+		var theHoursBox = $(this).find('.NumHours');
+		var theMinsBox  = $(this).find('.NumMins');
+		var theSecsBox  = $(this).find('.NumSeconds');	
+		countdown(theDaysBox, theHoursBox, theMinsBox, theSecsBox)
+	});
+});
+</script>
+{include file=footer.html}

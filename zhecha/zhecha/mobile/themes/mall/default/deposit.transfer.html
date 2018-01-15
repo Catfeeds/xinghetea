@@ -1,0 +1,43 @@
+{include file=member.header.html}
+<div class="margin10 deposit">
+	<div class="deposit-withdraw"> 
+		<!--{if $deposit_account.money gt 0}-->
+		<div class="notice-word">
+			<p class="yellow">将您的账户余额转出到另外的预存款账户上，请慎重填写。</p>
+		</div>
+		<form  id="transferForm" method="get">
+			<input type="hidden" name="app" value="deposit" />
+			<input type="hidden" name="act" value="transfer_confirm" />
+			<div class="title clearfix">
+				<h2 class="float-left">您的账户（{$deposit_account.account}）</h2>
+				<p class="float-left">余额：<strong>{$deposit_account.money}</strong> 元</p>
+			</div>
+			<div class="form">
+				<dl class="clearfix">
+					<dt>&nbsp;</dt>
+					<dd>
+						<input  placeholder="转入账户" type="text" class="input-s1" name="account" />
+					</dd>
+				</dl>
+				<dl class="clearfix">
+					<dt>&nbsp;</dt>
+					<dd>
+						<input placeholder="转账金额，单位元" type="text" name="money" class="input-s1" value="" />
+					</dd>
+				</dl>
+				<dl class="clearfix">
+					<dt>&nbsp;</dt>
+					<dd class="submit"> <span>
+						<input class="btn-alipay" type="submit" value="下一步" />
+						</span> </dd>
+				</dl>
+			</div>
+		</form>
+		<!--{else}-->
+		<div class="notice-word">
+			<p>您目前账户余额为<span class="f60">0</span>元，不能转账。</p>
+		</div>
+		<!--{/if}--> 
+	</div>
+</div>
+{include file=footer.html} 

@@ -1,0 +1,19 @@
+{include file="header.html"}
+<div id="main" class="w-full">
+	<div class="page-apply">
+		<div class="content clearfix">
+			<div class="apply-status">
+				<div class="notice-word padding10">
+					<p class="yellow"> 
+						<!--{if $store.apply_remark}--> 
+						审核不通过，原因为：<a href="{url app=apply&step=2&id=$store.store_id}">{$store.apply_remark}</a> 
+						<!--{else}--> 
+						{$lang.user_has_application}
+						<!--{/if}--> 
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{include file=footer.html}
