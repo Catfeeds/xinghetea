@@ -1137,3 +1137,36 @@
 #warning label.error {color: #000;font-weight: normal;}
 
 /*****************  以上为购物车到交易完成结束的页面代码，如果没有必要（除了修改宽度高度等），不要修改上面的代码 ---- 结束 ***************/
+
+
+
+
+
+
+/*首页*/
+.j1,.j2,.j3,.j4,.j5,.j6,.j7,.j8{width:1200px;margin: 20px auto;overflow: hidden}
+.j1_center{width: 390px;height: 300px;float: left;margin-left: 15px;}
+
+.j2_center{width: 590px;height: 300px;margin-left: 20px;float: left}
+
+.j3_center{width: 1200px;height: 300px  }
+
+.j4_center{width: 1200px;height: 150px}
+
+.j5_center1{width:745px;height: 300px;float: left }
+.j5_center2{width:440px;height: 300px;float: right }
+
+.j6_center1{width:440px;height: 300px;float: left}
+.j6_center2{width:745px;height: 300px;float: right }
+
+.j7_left{float: left;width: 795px;overflow: hidden}
+.j7_left_center{width: 390px;height:300px;float: left;margin-left: 15px;margin-bottom: 20px}
+.j7_right{width: 390px;height: 620px;float: right;}
+
+.j8_right{float: right;width: 795px;overflow: hidden}
+.j8_right_center{width: 390px;height:300px;float:left;margin-left: 15px;margin-bottom: 20px}
+.j8_left{width: 390px;height: 620px;float: left;}
+
+.j11,.j22,.j55,.j77,.j88{margin: 0}
+.j1 img,.j2 img,.j3 img,.j4 img,.j5 img,.j6 img,.j7 img,.j8 img{width: 100%;height: 100%;}
+
