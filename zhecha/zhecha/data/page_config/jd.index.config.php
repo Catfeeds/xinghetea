@@ -451,6 +451,7 @@ return array (
       3 => '_widget_281',
       4 => '_widget_126',
       5 => '_widget_123',
+      6 => '_widget_123',
     ),
   ),
 );

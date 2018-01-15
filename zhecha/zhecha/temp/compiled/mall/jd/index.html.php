@@ -17,6 +17,7 @@
     <div class="col-3 w" area="col-3" widget_type="area">
       <?php $this->display_widgets(array('page'=>'index','area'=>'col-3')); ?>
     </div>
+      <div style="width: 200px;height: 200px;background: red"></div>
   </div>
   <?php if ($this->_var['index']): ?>
   <div class="J_FloorNav floor-nav"></div>
