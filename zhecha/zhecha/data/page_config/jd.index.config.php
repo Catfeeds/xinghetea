@@ -159,10 +159,10 @@ return array (
         'ad6_image_url' => 'data/files/mall/template/201709261513402528.jpg',
         'ad6_link_url' => 'http://tea.7starsoft.com//index.php?app=goods&id=52',
         'slides_pos' => '3',
-        'tab_name' => 
-        array (
-          0 => '测试',
-        ),
+//        'tab_name' =>
+//        array (
+//          0 => '测试',
+//        ),
         'img_recom_id' => 
         array (
           0 => '1',
@@ -176,16 +176,16 @@ return array (
           0 => '',
         ),
         'ad7_image_url' => false,
-        'tabs' => 
-        array (
-          0 => 
-          array (
-            'tab_name' => '测试',
-            'img_recom_id' => '1',
-            'img_cate_id' => '49',
-            'sort_by' => '',
-          ),
-        ),
+//        'tabs' =>
+//        array (
+//          0 =>
+//          array (
+//            'tab_name' => '测试',
+//            'img_recom_id' => '1',
+//            'img_cate_id' => '49',
+//            'sort_by' => '',
+//          ),
+//        ),
         'slides' => 
         array (
           0 => 
@@ -445,8 +445,8 @@ return array (
     ),
     'col-3' => 
     array (
-      0 => '_widget_812',
-      1 => '_widget_705',
+//      0 => '_widget_812',
+//      1 => '_widget_705',
       2 => '_widget_125',
       3 => '_widget_281',
       4 => '_widget_126',

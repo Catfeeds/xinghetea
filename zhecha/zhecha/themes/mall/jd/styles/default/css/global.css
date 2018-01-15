@@ -84,9 +84,9 @@ a{text-decoration:none;blr:expression(this.onFocus=this.blur());outline:none; fo
 
 /* global banner */
 .global-image-ads{ position:relative;}
-.global-image-ads .global-image-ads-content{text-align:center; margin:0 auto}
-.global-image-ads .global-image-ads-botton{position:absolute;right:0px;top:0px; height:18px; width:18px; text-align:center; background:url(../images/x.png) #fff no-repeat; background-size:100%;  color:#fff; line-height:18px; cursor:pointer; font-size:16px;margin:0;paddding:0;}
 
+.global-image-ads .global-image-ads-botton{position:absolute;right:0px;top:0px; height:18px; width:18px; text-align:center; background:url(../images/x.png) #fff no-repeat; background-size:100%;  color:#fff; line-height:18px; cursor:pointer; font-size:16px;margin:0;paddding:0;}
+.global-image-ads .global-image-ads-content{text-align:center; margin:0 auto;display: none}
 
 
 /**************  global end  ***************************************************/
@@ -107,8 +107,8 @@ img.lazyload{background:#fff url(../images/loading.gif) center  center no-repeat
 .w-shop{}
 .w-user{}
 
-/* pageinfo */
 
+/* pageinfo */
 .page { float: right; text-align:left; background:none;display:inline-block}
 .page a,.page .down_no,.page .former_no,.page b{float:left;display:inline-block;width:35px; height:25px;margin-left:5px; text-align:center; line-height:25px; background:#fff;}
 .page .down_no,.page .down,.page .down:hover{width:60px;}

@@ -129,7 +129,7 @@ a{text-decoration:none;blr:expression(this.onFocus=this.blur());outline:none}
 .global-image-ads{ position:relative;text-align:center;margin:0px 5px 5px;}
 .global-image-ads a{width:100%;display:block;}
 .global-image-ads a img{display:block;width:100%;}
-.global-image-ads .global-image-ads-content{text-align:center; margin:0 auto}
+.global-image-ads .global-image-ads-content{text-align:center; margin:0 auto;display: none}
 .global-image-ads .global-image-ads-botton{position:absolute;right:2px;top:2px; height:16px; width:16px; text-align:center; background:#CC0000;color:#fff; line-height:16px; cursor:pointer; font-weight:normal; font-family:"Microsoft yahei"; font-size:100%; vertical-align:baseline}
 
 .icon-position{ background:url(../images/position.png) no-repeat left center #fff; background-size:15%; display:inline-block; padding-left:15px;}

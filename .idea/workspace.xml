@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a47c930c-971c-40e7-a853-1e43443a6033" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="$PROJECT_DIR$/zhecha/zhecha/data/config.inc.php" afterPath="$PROJECT_DIR$/zhecha/zhecha/data/config.inc.php" />
+      <change beforePath="$PROJECT_DIR$/zhecha/zhecha/data/install.lock" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/zhecha/zhecha/data/page_config/jd.index.config.php" afterPath="$PROJECT_DIR$/zhecha/zhecha/data/page_config/jd.index.config.php" />
+      <change beforePath="$PROJECT_DIR$/zhecha/zhecha/data/system.info.php" afterPath="$PROJECT_DIR$/zhecha/zhecha/data/system.info.php" />
+      <change beforePath="$PROJECT_DIR$/zhecha/zhecha/mobile/themes/mall/default/styles/default/css/global.css" afterPath="$PROJECT_DIR$/zhecha/zhecha/mobile/themes/mall/default/styles/default/css/global.css" />
+      <change beforePath="$PROJECT_DIR$/zhecha/zhecha/temp/caches/0051/fdc68de78b89ef2c7fa7dd6d30ee6076.cache.php" afterPath="$PROJECT_DIR$/zhecha/zhecha/temp/caches/0051/fdc68de78b89ef2c7fa7dd6d30ee6076.cache.php" />
+      <change beforePath="$PROJECT_DIR$/zhecha/zhecha/temp/compiled/mall/jd/header.html.php" afterPath="$PROJECT_DIR$/zhecha/zhecha/temp/compiled/mall/jd/header.html.php" />
+      <change beforePath="$PROJECT_DIR$/zhecha/zhecha/temp/compiled/mall/jd/index.html.php" afterPath="$PROJECT_DIR$/zhecha/zhecha/temp/compiled/mall/jd/index.html.php" />
+      <change beforePath="$PROJECT_DIR$/zhecha/zhecha/temp/compiled/mall/jd/member.header.html.php" afterPath="$PROJECT_DIR$/zhecha/zhecha/temp/compiled/mall/jd/member.header.html.php" />
+      <change beforePath="$PROJECT_DIR$/zhecha/zhecha/temp/compiled/mall/jd/message.html.php" afterPath="$PROJECT_DIR$/zhecha/zhecha/temp/compiled/mall/jd/message.html.php" />
+      <change beforePath="$PROJECT_DIR$/zhecha/zhecha/temp/compiled/mall/jd/top.html.php" afterPath="$PROJECT_DIR$/zhecha/zhecha/temp/compiled/mall/jd/top.html.php" />
+      <change beforePath="$PROJECT_DIR$/zhecha/zhecha/themes/mall/jd/index.html" afterPath="$PROJECT_DIR$/zhecha/zhecha/themes/mall/jd/index.html" />
+      <change beforePath="$PROJECT_DIR$/zhecha/zhecha/themes/mall/jd/styles/default/css/global.css" afterPath="$PROJECT_DIR$/zhecha/zhecha/themes/mall/jd/styles/default/css/global.css" />
+      <change beforePath="$PROJECT_DIR$/zhecha/zhecha/themes/mall/jd/styles/default/css/header.css" afterPath="$PROJECT_DIR$/zhecha/zhecha/themes/mall/jd/styles/default/css/header.css" />
+      <change beforePath="$PROJECT_DIR$/zhecha/zhecha/themes/mall/jd/styles/default/css/main.css" afterPath="$PROJECT_DIR$/zhecha/zhecha/themes/mall/jd/styles/default/css/main.css" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zhecha/zhecha/themes/mall/jd/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zhecha/zhecha/themes/mall/jd/header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1111">
+              <caret line="133" column="26" lean-forward="true" selection-start-line="133" selection-start-column="26" selection-end-line="133" selection-end-column="26" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#dl#0;n#div#2;n#div#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="template.index.html.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zhecha/zhecha/temp/compiled/admin/template.index.html.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-139">
+              <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zhecha/zhecha/themes/mall/jd/styles/default/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="575">
+              <caret line="168" column="128" lean-forward="false" selection-start-line="168" selection-start-column="128" selection-end-line="168" selection-end-column="128" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jd.index.config.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/zhecha/zhecha/data/page_config/jd.index.config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="433">
+              <caret line="450" column="25" lean-forward="true" selection-start-line="450" selection-start-column="25" selection-end-line="450" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>_widget_812</find>
+      <find>_widget_125</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/zhecha/zhecha/themes/mall/jd/header.html" />
+        <option value="$PROJECT_DIR$/zhecha/zhecha/themes/mall/jd/index.html" />
+        <option value="$PROJECT_DIR$/zhecha/zhecha/themes/mall/jd/styles/default/css/header.css" />
+        <option value="$PROJECT_DIR$/zhecha/zhecha/mobile/themes/mall/default/styles/default/css/global.css" />
+        <option value="$PROJECT_DIR$/zhecha/zhecha/themes/mall/jd/styles/default/css/global.css" />
+        <option value="$PROJECT_DIR$/zhecha/zhecha/themes/mall/jd/styles/default/css/main.css" />
+        <option value="$PROJECT_DIR$/zhecha/zhecha/data/page_config/jd.index.config.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1400" />
+    <option name="height" value="1083" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="tea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tea" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="tea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tea" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="zhecha" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="tea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tea" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="zhecha" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="zhecha" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="tea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tea" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="zhecha" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="zhecha" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="tea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tea" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="zhecha" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="zhecha" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="mall" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="tea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tea" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="zhecha" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="zhecha" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="mall" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="jd" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="tea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tea" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="zhecha" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="zhecha" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="mall" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="jd" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="styles" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="tea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tea" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="zhecha" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="zhecha" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="mall" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="jd" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="styles" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="default" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="tea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tea" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="zhecha" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="zhecha" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="mall" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="jd" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="styles" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="default" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SearchEverywhereHistoryKey" value="zhecha\data\page_config\jd.index.config.php&#9;FILE&#9;file://C:/phpStudy/WWW/tea/zhecha/zhecha/data/page_config/jd.index.config.php&#10;.global-image-ads-content&#9;null&#9;null&#10;widget_type&#9;null&#9;null&#10;col-2-r-r&#9;null&#9;null&#10;clearfix&#9;null&#9;null&#10;w&#9;null&#9;null" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a47c930c-971c-40e7-a853-1e43443a6033" name="Default" comment="" />
+      <created>1515995252199</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1515995252199</updated>
+      <workItem from="1515995253292" duration="565000" />
+      <workItem from="1515995823108" duration="1214000" />
+      <workItem from="1515997878819" duration="12664000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="14443000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2586393" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/zhecha/zhecha/app/apply.app.php</url>
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/zhecha/zhecha/app/apply.app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhecha/zhecha/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhecha/zhecha/安装说明.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="16" column="7" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="18" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhecha/zhecha/app/apply.app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhecha/zhecha/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhecha/zhecha/config.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhecha/zhecha/app/apply.app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhecha/zhecha/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhecha/zhecha/initdata```/initdata.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" column="94" lean-forward="true" selection-start-line="15" selection-start-column="94" selection-end-line="15" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhecha/zhecha/安装说明.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="16" column="7" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="18" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhecha/zhecha/mobile/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhecha/zhecha/temp/compiled/mall/jd/appmarket.buylog.html.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="23" column="74" lean-forward="false" selection-start-line="23" selection-start-column="74" selection-end-line="23" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhecha/zhecha/admin/templates/template.index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="18" column="107" lean-forward="true" selection-start-line="18" selection-start-column="107" selection-end-line="18" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhecha/zhecha/temp/compiled/admin/refund.view.html.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhecha/zhecha/themes/mall/jd/styles/default/css/user.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="986" column="1" lean-forward="false" selection-start-line="986" selection-start-column="1" selection-end-line="986" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhecha/zhecha/themes/mall/jd/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1111">
+          <caret line="133" column="26" lean-forward="true" selection-start-line="133" selection-start-column="26" selection-end-line="133" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#dl#0;n#div#2;n#div#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhecha/zhecha/themes/mall/jd/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhecha/zhecha/themes/mall/jd/find_password.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="64" column="1" lean-forward="false" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhecha/zhecha/themes/mall/jd/styles/default/css/header.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1100">
+          <caret line="134" column="155" lean-forward="false" selection-start-line="134" selection-start-column="155" selection-end-line="134" selection-end-column="155" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhecha/zhecha/mobile/themes/mall/default/styles/default/css/global.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="131" column="91" lean-forward="true" selection-start-line="131" selection-start-column="91" selection-end-line="131" selection-end-column="91" />
+          <folding>
+            <marker date="1516007461071" expanded="true" signature="801:825" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhecha/zhecha/themes/mall/jd/styles/default/css/global.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="82" column="36" lean-forward="true" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
+          <folding>
+            <marker date="1516007659017" expanded="true" signature="577:601" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhecha/zhecha/themes/mall/jd/styles/default/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="168" column="128" lean-forward="false" selection-start-line="168" selection-start-column="128" selection-end-line="168" selection-end-column="128" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhecha/zhecha/temp/compiled/admin/template.index.html.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-139">
+          <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhecha/zhecha/data/page_config/jd.index.config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="450" column="25" lean-forward="true" selection-start-line="450" selection-start-column="25" selection-end-line="450" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

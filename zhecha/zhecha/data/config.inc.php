@@ -38,14 +38,14 @@ SESSION_MEMCACHED : 存储session数据的memcached服务器(服务器地址1:�
 */
 
 return array (
-  'SITE_URL' => 'http://tea.cc/',
-  'DB_CONFIG' => 'mysql://root:root@localhost:3306/zhecha',
+  'SITE_URL' => 'http://xjd.com',
+  'DB_CONFIG' => 'mysql://root:root@localhost:3306/xjd',
   'DB_PREFIX' => 'ecm_',
   'LANG' => 'sc-utf-8',
   'COOKIE_DOMAIN' => '',
   'COOKIE_PATH' => '/',
-  'ECM_KEY' => '9ec8dd79482293126d4eb789486dfc49',
-  'MALL_SITE_ID' => 'EMRJZFFqe7NM31zv',
+  'ECM_KEY' => 'cba7b694450b37eb28b7add47b3ddbbf',
+  'MALL_SITE_ID' => 'EMSBPOfbd6Y3tCSC',
   'ENABLED_GZIP' => 0,
   'DEBUG_MODE' => 0,
   'CACHE_SERVER' => 'default',
