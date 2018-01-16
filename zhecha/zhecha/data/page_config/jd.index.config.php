@@ -6,11 +6,11 @@ return array (
     '_widget_505' => 
     array (
       'name' => 'jd_image_ads',
-      'options' => 
+      'options' =>
       array (
         'ad_image_url' => 'data/files/mall/template/201709291556226381.jpg',
         'ad_link_url' => '',
-        'ad_width' => '1346',
+        'ad_width' => '1200',
         'ad_height' => '100',
         'ad_border' => '',
         'ad_margin' => '',
@@ -18,7 +18,7 @@ return array (
         'ad_button_close' => '1',
       ),
     ),
-    '_widget_222' => 
+    '_widget_222' =>
     array (
       'name' => 'jd_slides',
       'options' => 
@@ -85,57 +85,57 @@ return array (
         ),
       ),
     ),
-    '_widget_812' => 
-    array (
-      'name' => 'jd_circle',
-      'options' => 
-      array (
-        'ad1_image_url' => 'data/files/mall/template/201709271054487886.jpg',
-        'ads' => 
-        array (
-          0 => 
-          array (
-            'ad_image_url' => 'data/files/mall/template/201709251834424779.jpg',
-            'ad_link_url' => 'http://tea.7starsoft.com//index.php?app=goods&id=41',
-            'ad_title' => NULL,
-          ),
-          1 => 
-          array (
-            'ad_image_url' => 'data/files/mall/template/201709251839502576.jpg',
-            'ad_link_url' => 'http://tea.7starsoft.com//index.php?app=goods&id=42',
-            'ad_title' => NULL,
-          ),
-          2 => 
-          array (
-            'ad_image_url' => 'data/files/mall/template/201709251840103403.jpg',
-            'ad_link_url' => 'http://tea.7starsoft.com//index.php?app=goods&id=43',
-            'ad_title' => NULL,
-          ),
-          3 => 
-          array (
-            'ad_image_url' => 'data/files/mall/template/201709251841446494.jpg',
-            'ad_link_url' => 'http://tea.7starsoft.com//index.php?app=goods&id=44',
-            'ad_title' => NULL,
-          ),
-        ),
-      ),
-    ),
-    '_widget_705' => 
-    array (
-      'name' => 'jd_image_ads',
-      'options' => 
-      array (
-        'ad_image_url' => 'data/files/mall/template/201709251846163654.png',
-        'ad_link_url' => '',
-        'ad_width' => '1200',
-        'ad_height' => '70',
-        'ad_border' => '',
-        'ad_margin' => '0px 0px 10px 0px',
-        'ad_background_color' => '',
-        'ad_button_close' => '',
-      ),
-    ),
-    '_widget_125' => 
+//    '_widget_812' =>
+//    array (
+//      'name' => 'jd_circle',
+//      'options' =>
+//      array (
+//        'ad1_image_url' => 'data/files/mall/template/201709271054487886.jpg',
+//        'ads' =>
+//        array (
+//          0 =>
+//          array (
+//            'ad_image_url' => 'data/files/mall/template/201709251834424779.jpg',
+//            'ad_link_url' => 'http://tea.7starsoft.com//index.php?app=goods&id=41',
+//            'ad_title' => NULL,
+//          ),
+//          1 =>
+//          array (
+//            'ad_image_url' => 'data/files/mall/template/201709251839502576.jpg',
+//            'ad_link_url' => 'http://tea.7starsoft.com//index.php?app=goods&id=42',
+//            'ad_title' => NULL,
+//          ),
+//          2 =>
+//          array (
+//            'ad_image_url' => 'data/files/mall/template/201709251840103403.jpg',
+//            'ad_link_url' => 'http://tea.7starsoft.com//index.php?app=goods&id=43',
+//            'ad_title' => NULL,
+//          ),
+//          3 =>
+//          array (
+//            'ad_image_url' => 'data/files/mall/template/201709251841446494.jpg',
+//            'ad_link_url' => 'http://tea.7starsoft.com//index.php?app=goods&id=44',
+//            'ad_title' => NULL,
+//          ),
+//        ),
+//      ),
+//    ),
+//    '_widget_705' =>
+//    array (
+//      'name' => 'jd_image_ads',
+//      'options' =>
+//      array (
+//        'ad_image_url' => 'data/files/mall/template/201709251846163654.png',
+//        'ad_link_url' => '',
+//        'ad_width' => '1200',
+//        'ad_height' => '70',
+//        'ad_border' => '',
+//        'ad_margin' => '0px 0px 10px 0px',
+//        'ad_background_color' => '',
+//        'ad_button_close' => '',
+//      ),
+//    ),
+                                                                                                                                                                                                                                                                        '_widget_125' =>
     array (
       'name' => 'jd_floor_two',
       'options' => 
